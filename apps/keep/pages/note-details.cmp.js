@@ -8,6 +8,11 @@ export default {
     <h3>id: {{note.id}}</h3>
     <h3>title: {{note.info.title}}</h3>
     <p>txt: {{note.info.txt}}</p>
+
+    <input @input="saveNote()" type="text" v-model="note.info.title">
+
+    <textarea cols="30" rows="5" v-model = "note.info.txt" placeholder="wright your txt"></textarea>
+
     </div>
     `,
   created() {
@@ -17,13 +22,21 @@ export default {
   data() {
     return {
       note: null,
+      noteInfo: { title: null, txt: null },
     }
   },
-  methods: {},
+  methods: {
+    saveNote() {
+      noteService.save(this.note)
+    },
+  },
   computed: {
     change() {
       const id = this.$route.params.id
       noteService.get(id).then((note) => (this.note = note))
+    },
+    print() {
+      console.log(this.noteInfo)
     },
   },
   components: {},
