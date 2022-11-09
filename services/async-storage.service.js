@@ -34,6 +34,7 @@ function post(entityType, newEntity, append = true) {
     })
 }
 
+
 function put(entityType, updatedEntity) {
     return query(entityType).then(entities => {
         const idx = entities.findIndex(entity => entity.id === updatedEntity.id)

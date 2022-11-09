@@ -50,7 +50,7 @@ function _createMails() {
 
                 ]
                 storageService.post(MAILS_KEY, mails)
-                console.log('createbook');
+                console.log('create mail');
             }
         })
 }
