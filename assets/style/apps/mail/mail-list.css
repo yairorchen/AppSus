@@ -3,8 +3,25 @@
 
 .mail-line{
     border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-    margin: 5px;
+    margin: 0.8rem;
+    font-size: 1.1rem;
 }
 .mail-line:hover{
     cursor: pointer;
+}
+
+.mail-line-btn{
+    cursor: pointer;
+    z-index: 2;
+}
+
+.delete-btn{
+    min-width: max-content;
+    min-height: max-content;
+    border-radius: 50%;
+    border: 0;
+    background: fixed;
+}
+.delete-btn:hover{
+    background-color: rgb(215, 30, 30);
 }

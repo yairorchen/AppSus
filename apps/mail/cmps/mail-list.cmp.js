@@ -8,7 +8,8 @@ export default {
         <h2>Mail list home</h2>
         <ul class="clean-list">
             <li v-for="mail in mails" :key="mail.id">
-                <router-link @click="updateAndToggle(mail)" :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
+                <router-link 
+                  :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
                     <mail-preview :mail="mail"/>
                 </router-link>
             </li>
@@ -27,12 +28,6 @@ export default {
         console.log('mails', this.mails);
     },
     methods: {
-        updateAndToggle(mail){
-            mail.isRead = true
-            console.log('mails',this.mails);
-            mailService.updateMailData(this.mails)
-            this.isClicked = true
-        },
         toggleClick(){
         }
     },

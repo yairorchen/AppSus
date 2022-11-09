@@ -5,10 +5,13 @@ export default {
     <div class="mail-line flex justify-between">
         <div class="name"> {{ mail.name }} </div>
         <div class="subject"> {{ mail.subject }} </div>
-        <div class="sent-at" @mouseover="toggleHover" @mouseleave="toggleHover">
-        <div v-if="!isHover"> {{ new Date(mail.sentAt).toDateString() }} </div> 
-        <img v-if="!isHover"  src="../../assets/img/delete.png" width=10 alt="" />
-        </div>    
+        <div class="sent-at">
+            <div> {{ new Date(mail.sentAt).toDateString() }} </div> 
+        </div>  
+        <input title="Mark as read" class="mail-line-btn is-read-btn" @click.stop="toggleRead($event)" type="checkbox" name="read">
+        <button class="delete-btn mail-line-btn" @click.stop.prevent="remove">
+            <img title="Delete"  src="../../assets/img/delete.png"  width=14 height=18 alt=""/>
+        </button>
     </div>
     `,
     data(){
@@ -22,6 +25,12 @@ export default {
     methods:{
         toggleHover(){
             this.isHover = !this.isHover
+        },
+        toggleRead(ev){
+            this.mail.isRead = ev.target.checked
+        },
+        remove(){
+            console.log('remove')
         }
     },
     computed:{
