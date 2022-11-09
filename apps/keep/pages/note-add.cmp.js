@@ -1,6 +1,7 @@
 import { noteService } from '../services/note.service.js'
 
 export default {
+  props: ['isAdd'],
   template: `
   <h3>new note</h3>
   <div class="note-details flex flex-column align-center justify-center">

@@ -4,6 +4,7 @@ import noteList from '../cmps/note-list.cmp.js'
 import noteFilter from '../cmps/note-filter.cmp.js'
 
 import noteAdd from '../pages/note-add.cmp.js'
+import noteDetails from '../pages/note-details.cmp.js'
 
 export default {
   template: `
@@ -16,7 +17,7 @@ export default {
             @remove="remove"
             :notes="notesToShow"/>
 
-            <!-- <router-view ></router-view> -->
+            <router-view ></router-view>
             <note-add @save="save" v-if="isAdd"/>
         </section>
     `,
@@ -30,7 +31,7 @@ export default {
     return {
       notes: null,
       filterBy: {},
-      selectedNote: null,
+      //   selectedNote: null,
       isAdd: false,
     }
   },
@@ -55,8 +56,10 @@ export default {
     filter(filterBy) {
       this.filterBy = filterBy
     },
-    save() {
-      console.log
+    save(note) {
+      console.log(note)
+      this.isAdd = false
+      this.notes.push(note)
       console.log('yaaa')
     },
   },
@@ -73,5 +76,6 @@ export default {
     noteFilter,
 
     noteAdd,
+    noteDetails,
   },
 }

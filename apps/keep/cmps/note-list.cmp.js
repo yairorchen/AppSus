@@ -5,7 +5,7 @@ export default {
   name: 'note-list',
   template: `
     <section>
-        <router-link  to='/keep/add' @save="save()">Add new note</router-link>
+        <!-- <router-link  to='/keep/add' @save="save()">Add new note</router-link> -->
      <h3>list</h3>
         <ul>
             <li class="clean-list" v-for="note in notes" :key="note.id" >
