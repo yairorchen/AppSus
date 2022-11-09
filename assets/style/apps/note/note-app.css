@@ -1,12 +1,18 @@
 .note-preview {
     background-color: rgba(255, 228, 196, 0);
-    min-width: 238px;
-    max-width: 238px;
-    border-radius: 5px;
-    border: black 1px solid;
+    width: 90vw;
+    border-radius: 8px;
+    border: rgba(164, 159, 159, 0.523) 1px solid;
     padding: 10px;
     margin-top: 15px;
-    break-inside: avoid-column
+    break-inside: avoid-column;
+    transition: 0.3s;
+
+
+}
+
+.note-preview:hover {
+    box-shadow: -1px 0px 5px 0px;
 }
 
 .note-details {
@@ -16,11 +22,22 @@
     border-radius: 10px;
     padding: 15px;
     z-index: 10;
-    box-shadow: -2px -1px 16px 2000px rgba(48, 45, 45, 0.45);
+    box-shadow: -2px -1px 16px 2000px rgba(48, 45, 45, 0.5);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.note-add {
+    background-color: rgba(255, 255, 255, 0);
+    width: 80vw;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 10;
+    box-shadow: 0 0 12px 0px;
+
 }
 
 .clean-input {
@@ -28,24 +45,88 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     min-width: 100%;
     max-width: 100%;
-    min-height: 200px;
+    padding: 0;
     background-color: rgba(240, 248, 255, 0);
     border: 0
 }
 
+
+.notes-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .notes-container {
     margin-top: 0;
-    columns: auto 15em;
+    columns: auto 14.5em;
     height: fit-content;
-    /* min-height: 1000px; */
+    transition: 0.6s;
 
 }
 
 .clean-input:focus {
-    border: 0
+    border: 0;
+
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.search {
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 0 7px 0px;
 }
 
 .btn {
     border: 0;
     background-color: rgba(240, 248, 255, 0);
+}
+
+
+
+@media screen and (min-width: 540px) {
+    .note-preview {
+
+        width: 238px;
+    }
+
+    .notes-container {
+        width: 500px
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+
+    .notes-container {
+        width: 750px
+    }
+
+}
+
+@media screen and (min-width: 1040px) {
+
+    .notes-container {
+        width: 1020px
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    .notes-container {
+        width: 1100px
+    }
+
+}
+
+@media screen and (min-width: 1550px) {
+
+    .notes-container {
+        width: 1550px
+    }
+
 }

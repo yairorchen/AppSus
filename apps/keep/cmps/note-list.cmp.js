@@ -5,10 +5,10 @@ export default {
   name: 'note-list',
   template: `
     <router-link  to='/keep/add' @save="save()">Add new note</router-link>
-    <section>
+    <section class="notes-layout">
      <div class="notes-container">
             <div class="note-preview" v-for="note in notes" :key="note.id" >
-                <button class="btn" @click="remove(note.id)">X</button>
+                <!-- <button class="btn" @click="remove(note.id)">X</button> -->
                 <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
                 </router-link>      
