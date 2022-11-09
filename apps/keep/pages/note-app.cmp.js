@@ -8,6 +8,7 @@ import noteDetails from '../pages/note-details.cmp.js'
 
 export default {
   template: `
+  name: 'note-app',
         <section>
             <note-filter @filter="filter"/>
             <note-list
