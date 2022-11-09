@@ -11,6 +11,7 @@ export default {
   name: 'note-app',
         <section>
             <note-filter @filter="filter"/>
+             <router-view @save="save"></router-view>
             <note-list
             v-if="notes" 
             @save="save"
@@ -19,7 +20,7 @@ export default {
             
             
 
-            <router-view @save="save"></router-view>
+           
         </section>
     `,
   created() {
