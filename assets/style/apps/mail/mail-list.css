@@ -1,0 +1,7 @@
+.mail-line{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+    margin: 5px;
+}
+.mail-line:hover{
+    cursor: pointer;
+}
