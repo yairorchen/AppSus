@@ -10,7 +10,10 @@ export default {
             <li v-for="mail in mails" :key="mail.id">
                 <router-link 
                   :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
-                    <mail-preview :mail="mail"/>
+                    <mail-preview
+                     :mail="mail"
+                     @removed="remove"
+                     />
                 </router-link>
             </li>
         </ul>
@@ -28,7 +31,13 @@ export default {
         console.log('mails', this.mails);
     },
     methods: {
-        toggleClick(){
+        remove(mailId){
+            console.log('mailId',mailId);
+            mailService.remove(mailId)
+            .then(()=>{
+                const idx = this.mails.findIndex((mail) => mail.id === mailId)
+                this.mails.splice(idx,1)
+            })
         }
     },
     computed: {

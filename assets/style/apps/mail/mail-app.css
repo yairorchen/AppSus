@@ -1,4 +1,11 @@
 .btn-humburger{
     font-size: 1.5rem;
     background: fixed;
+    width: fit-content;
+}
+
+.compose-link{
+    font-size: 1.5rem;
+    background-color: rgb(125, 190, 255);
+    margin: ;
 }

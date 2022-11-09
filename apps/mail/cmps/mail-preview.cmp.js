@@ -31,6 +31,7 @@ export default {
         },
         remove(){
             console.log('remove')
+            this.$emit('removed', this.mail.id)
         }
     },
     computed:{

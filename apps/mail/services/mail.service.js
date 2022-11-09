@@ -4,14 +4,15 @@ import { utilService } from '../../../services/util.service.js'
 export const mailService = {
     query,
     get,
-
-  }
+    remove,
+    save,
+}
 
 const loggedinUser = {
     email: 'user@appsus.com',
     fullname: 'Mahatma Appsus'
-    }
-  
+}
+
 const MAILS_KEY = 'mailsDB'
 
 const mailData = [
@@ -55,9 +56,24 @@ function get(id) {
     return storageService.get(MAILS_KEY, id)
 }
 
+function remove(mailId) {
+    return storageService.remove(MAILS_KEY, mailId)
+}
+
+function save(mail) {
+    if (mail.id) {
+        console.log('save')
+        return storageService.put(MAILS_KEY, mail)
+    } else {
+        console.log('new')
+        mailData.push(mail)
+        return storageService.post(MAILS_KEY, mail)
+    }
+}
+
 function _createMails() {
     const MAIL = utilService.loadFromStorage(MAILS_KEY)
     if (!MAIL || !MAIL.length) {
-      utilService.saveToStorage(MAILS_KEY, mailData)
+        utilService.saveToStorage(MAILS_KEY, mailData)
     }
-  }
+}
