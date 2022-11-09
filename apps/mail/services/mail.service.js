@@ -4,6 +4,7 @@ import { utilService } from '../../../services/util.service.js'
 export const mailService = {
     query,
     get,
+    updateMailData
   }
 
 const loggedinUser = {
@@ -52,6 +53,11 @@ function query() {
 
 function get(id) {
     return storageService.get(MAILS_KEY, id)
+}
+
+function updateMailData(mails){
+    console.log('mails', mails);
+    utilService.saveToStorage(MAILS_KEY, mails)
 }
 
 function _createMails() {

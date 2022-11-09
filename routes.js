@@ -7,7 +7,7 @@ import noteAdd from './apps/keep/pages/note-add.cmp.js'
 
 import mail from './apps/mail/pages/mail-app.cmp.js'
 import mailDetails from './apps/mail/pages/mail-details.cmp.js'
-
+import newMail from './apps/mail/cmps/new-mail.cmp.js'
 const { createRouter, createWebHashHistory } = VueRouter
 
 const routerOptions = {
@@ -38,6 +38,13 @@ const routerOptions = {
     {
       path: '/mail',
       component: mail,
+      children: [
+        {
+          path: '/compose',
+          component: newMail,
+          name: 'compose',
+          props: true,
+        }]
     },
     {
       path: '/mail/:id',

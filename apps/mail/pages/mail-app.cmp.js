@@ -4,12 +4,15 @@ import mailMenu from "../cmps/mail-menu.cmp.js"
 export default {
     name: 'mail-app',
     template: `
+    <mail-menu
+    :mails="mails" 
+    ></mail-menu>
     <section class="home-page">
-        <mail-menu></mail-menu>
         <mail-list
         v-if="mails"
         :mails="mails" 
-        ></mail-list>
+        >
+    </mail-list>
         <router-view></router-view>
     </section>
     `,
