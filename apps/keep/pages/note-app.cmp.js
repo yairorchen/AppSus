@@ -10,6 +10,7 @@ export default {
             @selected="select" 
             @remove="remove"
             :notes="notes"/>
+            <router-view></router-view>
         </section>
     `,
   created() {
