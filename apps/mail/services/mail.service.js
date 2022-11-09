@@ -27,7 +27,7 @@ const mailData = [
         id: 'e102',
         name: 'yossi',
         subject: 'love you!',
-        body: 'love love love to catch up sometimes',
+        body: 'love love love to catch up sometimes and! mister lova lova! its a fantastic tactic to write over 100 chars for tests what do you think?!?',
         isRead: false,
         sentAt: 1551134930594,
         from: 'bobo@bobo.com',

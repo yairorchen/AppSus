@@ -5,11 +5,12 @@ export default {
     props: ['mails'],
     template: `
     <section v-if="!isClicked">
-        <h1> mail list home</h1>
+        <h2>Mail list home</h2>
         <ul class="clean-list">
-            <li  v-for="mail in mails" :key="mail.id" class="mail-line flex justify-between">
-                <mail-preview  :mail="mail"/>
-                <router-link @click="toggleClick" :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">Details</router-link>
+            <li  v-for="mail in mails" :key="mail.id">
+                <router-link @click="toggleClick" :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
+                    <mail-preview :mail="mail"/>
+                </router-link>
             </li>
         </ul>
     </section>

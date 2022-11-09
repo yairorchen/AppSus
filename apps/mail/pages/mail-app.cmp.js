@@ -1,11 +1,11 @@
 import { mailService } from "../services/mail.service.js"
 import mailList from "../cmps/mail-list.cmp.js"
-
+import mailMenu from "../cmps/mail-menu.cmp.js"
 export default {
     name: 'mail-app',
     template: `
     <section class="home-page">
-        <h1>mail sweet home</h1>
+        <mail-menu></mail-menu>
         <mail-list
         v-if="mails"
         :mails="mails" 
@@ -55,6 +55,7 @@ export default {
 
     },
     components: {
-        mailList
+        mailList,
+        mailMenu
     }
 }

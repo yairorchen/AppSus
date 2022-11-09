@@ -1,0 +1,11 @@
+
+/* LONG TEXT */
+
+.read-more{
+    border: 0;
+    min-width: fit-content;
+    padding: 0;
+    min-height: fit-content;
+    background: fixed;
+    text-decoration: underline;
+}
