@@ -3,7 +3,7 @@ import aboutPage from './views/app-about.cmp.js'
 import keep from './apps/keep/pages/note-app.cmp.js'
 import noteDetails from './apps/keep/pages/note-details.cmp.js'
 import mail from './apps/mail/pages/mail-app.cmp.js'
-
+import mailDetails from './apps/mail/pages/mail-details.cmp.js'
 const { createRouter, createWebHashHistory } = VueRouter
 
 const routerOptions = {
@@ -30,6 +30,15 @@ const routerOptions = {
     {
       path: '/mail',
       component: mail,
+      children:[
+
+        {
+            path: '/mail/:id',
+            component: mailDetails,
+            name:'details',
+            props:true
+        }
+    ]
     },
   ],
 }

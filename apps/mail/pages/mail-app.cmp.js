@@ -10,6 +10,7 @@ export default {
         v-if="mails"
         :mails="mails" 
         ></mail-list>
+        <router-view></router-view>
     </section>
     `,
     data() {
