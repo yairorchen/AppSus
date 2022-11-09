@@ -1,5 +1,12 @@
 .note-preview {
-    background-color: bisque;
+    background-color: rgba(255, 228, 196, 0);
+    min-width: 238px;
+    max-width: 238px;
+    border-radius: 5px;
+    border: black 1px solid;
+    padding: 10px;
+    margin-top: 15px;
+
 }
 
 .note-details {
@@ -26,7 +33,18 @@
     border: 0
 }
 
-.clean-input:focus {
+.notes-container {
+    margin-top: 0;
+    columns: auto 15em;
+    /* min-height: 1000px; */
 
+}
+
+.clean-input:focus {
     border: 0
+}
+
+.btn {
+    border: 0;
+    background-color: rgba(240, 248, 255, 0);
 }

@@ -8,17 +8,17 @@ import noteDetails from '../pages/note-details.cmp.js'
 
 export default {
   template: `
-        <section >
-            <h1>note app</h1>
+        <section>
             <note-filter @filter="filter"/>
-            <button @click="add()">+</button>
             <note-list
             v-if="notes" 
+            @save="save"
             @remove="remove"
             :notes="notesToShow"/>
+            
+            
 
-            <router-view ></router-view>
-            <note-add @save="save" v-if="isAdd"/>
+            <router-view @save="save"></router-view>
         </section>
     `,
   created() {
@@ -31,14 +31,9 @@ export default {
     return {
       notes: null,
       filterBy: {},
-      //   selectedNote: null,
-      isAdd: false,
     }
   },
   methods: {
-    add() {
-      this.isAdd = !this.isAdd
-    },
     remove(noteId) {
       console.log(noteId)
       noteService.remove(noteId).then(() => {
@@ -57,10 +52,19 @@ export default {
       this.filterBy = filterBy
     },
     save(note) {
-      console.log(note)
-      this.isAdd = false
-      this.notes.push(note)
-      console.log('yaaa')
+      if (note.id) {
+        var noteId = note.id
+        console.log('save from app')
+        noteService.save(note).then(() => {
+          const idx = this.notes.findIndex((note) => note.id === noteId)
+          this.notes.splice(idx, 1, note)
+        })
+      } else {
+        console.log('new from app')
+        noteService.save(note).then(() => {
+          this.notes.unshift(note)
+        })
+      }
     },
   },
   computed: {
