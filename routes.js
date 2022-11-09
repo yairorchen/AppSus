@@ -38,14 +38,12 @@ const routerOptions = {
     {
       path: '/mail',
       component: mail,
-      children: [
-        {
-          path: '/mail/:id',
-          component: mailDetails,
-          name: 'details',
-          props: true,
-        },
-      ],
+    },
+    {
+      path: '/mail/:id',
+      component: mailDetails,
+      name: 'details',
+      props: true,
     },
   ],
 }
