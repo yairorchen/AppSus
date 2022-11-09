@@ -6,10 +6,14 @@ export const storageService = {
     remove,
 }
 
+// get array from storage
+
 function query(entityType, delay = 500) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
+
+// get item with id from array from storage
 
 function get(entityType, entityId) {
     return query(entityType).then(entities => {
@@ -18,6 +22,8 @@ function get(entityType, entityId) {
         return entity
     })
 }
+
+
 
 function post(entityType, newEntity, append = true) {
     newEntity.id = _makeId()
