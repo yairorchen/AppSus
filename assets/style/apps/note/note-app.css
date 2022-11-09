@@ -15,3 +15,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.clean-input {
+    font-size: 1.2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0
+}
+
+.clean-input:focus {
+
+    border: 0
+}

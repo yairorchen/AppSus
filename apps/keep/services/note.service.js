@@ -7,6 +7,7 @@ export const noteService = {
   get,
   remove,
   save,
+  createNote,
 }
 const KEEP_KEY = 'keeps'
 const KeepData = [
@@ -70,7 +71,16 @@ function save(note) {
     console.log('save')
     return storageService.put(KEEP_KEY, note)
   } else {
+    console.log('new')
     return storageService.post(KEEP_KEY, note)
+  }
+}
+function createNote() {
+  return {
+    id: null,
+    info: { title: '', txt: '' },
+    type: 'txt',
+    style: '',
   }
 }
 
