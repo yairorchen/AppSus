@@ -2,8 +2,8 @@
 
 
 .app-footer{
-    position:absolute;
-    bottom: 0;
+    position:relative;
+    top: 1000px;
 }
 
 
