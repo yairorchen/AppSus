@@ -4,7 +4,9 @@ export default {
   name: 'note-preview',
         <div> 
                 <h3>{{note.info.title}}</h3>
-                <p>{{note.info.txt}}</p>
+                <div>{{note.info.txt}}</div>
+                <!-- <h3>{{note.info.title}}</h3>
+                <div>{{note.info.txt}}</div> -->
                 <!-- <input class="clean-input" type="text" v-model="note.info.title">
                 <input class="clean-input" type="text" v-model="note.info.txt"> -->
                 
