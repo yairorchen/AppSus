@@ -6,8 +6,9 @@ export default {
     template: `
         <h1> mail list home</h1>
         <ul class="clean-list">
-            <li @click="openEmail" v-for="mail in mails" :key="mail.id" class="mail-line flex justify-between">
+            <li  v-for="mail in mails" :key="mail.id" class="mail-line flex justify-between">
             <mail-preview :mail="mail"/>
+            <router-link :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">Details</router-link>
             </li>
         </ul>
     `,
@@ -17,7 +18,7 @@ export default {
         }
     },
     created() {
-
+        
     },
     mounted() {
         console.log('mails', this.mails);
