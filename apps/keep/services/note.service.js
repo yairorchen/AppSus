@@ -72,6 +72,7 @@ function save(note) {
     return storageService.put(KEEP_KEY, note)
   } else {
     console.log('new')
+    KeepData.push(note)
     return storageService.post(KEEP_KEY, note)
   }
 }
