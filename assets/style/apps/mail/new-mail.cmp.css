@@ -1,0 +1,16 @@
+.new-mail-section{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #ffff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vh #0000004d;
+    padding: 1em;
+    border-radius: 0.8em;
+}
+
+.send-mail-btn{
+    min-width: fit-content;
+    min-height: fit-content;
+    padding: 4px;
+}

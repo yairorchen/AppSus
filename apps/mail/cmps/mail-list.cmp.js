@@ -1,5 +1,5 @@
 import mailPreview from "./mail-preview.cmp.js";
-
+import { mailService } from "../services/mail.service.js";
 export default {
     name: 'mail-list',
     props: ['mails'],
@@ -7,8 +7,8 @@ export default {
     <section v-if="!isClicked">
         <h2>Mail list home</h2>
         <ul class="clean-list">
-            <li  v-for="mail in mails" :key="mail.id">
-                <router-link @click="toggleClick" :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
+            <li v-for="mail in mails" :key="mail.id">
+                <router-link @click="updateAndToggle(mail)" :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
                     <mail-preview :mail="mail"/>
                 </router-link>
             </li>
@@ -27,12 +27,13 @@ export default {
         console.log('mails', this.mails);
     },
     methods: {
-        openEmail(){
-            console.log('open email!');
+        updateAndToggle(mail){
+            mail.isRead = true
+            console.log('mails',this.mails);
+            mailService.updateMailData(this.mails)
+            this.isClicked = true
         },
         toggleClick(){
-            console.log('toggle click');
-            this.isClicked = true
         }
     },
     computed: {
