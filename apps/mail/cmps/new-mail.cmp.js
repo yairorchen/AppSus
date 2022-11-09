@@ -7,7 +7,9 @@ export default {
             <input type="email" name="to" placeholder="to" />
         <input type="text" placeholder="Subject">
             <textarea name="mail content"  placeholder="Compose email " cols="30" rows="10"></textarea>
-            <button class="send-mail-btn">Send</button>
+            <button class="send-mail-btn">
+            <router-link to="/mail">Send</router-link>
+            </button>
         </form>
     </section>
     `,
