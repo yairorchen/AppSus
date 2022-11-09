@@ -5,8 +5,8 @@ export default {
   template: `
   <h3>new note</h3>
   <div class="note-details flex flex-column align-center justify-center">
-    <!-- <router-link to="/keep" @click="saveNote()">Back</router-link> -->
-    <button @click="saveNote()" >X</button>
+    <router-link to="/keep" @click="saveNote()">Back</router-link>
+    <!-- <button @click="saveNote()" >X</button> -->
     <h3>Add new note</h3>
     
 
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     saveNote() {
-      noteService.save(this.note)
+      //   noteService.save(this.note)
       this.$emit('save', this.note)
     },
   },

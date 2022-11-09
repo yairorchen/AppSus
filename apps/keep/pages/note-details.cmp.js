@@ -27,6 +27,7 @@ export default {
   methods: {
     saveNote() {
       noteService.save(this.note)
+      this.$emit('save', this.note)
     },
   },
   computed: {

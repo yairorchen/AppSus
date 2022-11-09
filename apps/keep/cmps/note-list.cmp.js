@@ -4,18 +4,18 @@ export default {
   props: ['notes'],
   name: 'note-list',
   template: `
+    <router-link  to='/keep/add' @save="save()">Add new note</router-link>
     <section>
-        <!-- <router-link  to='/keep/add' @save="save()">Add new note</router-link> -->
-     <h3>list</h3>
-        <ul>
-            <li class="clean-list" v-for="note in notes" :key="note.id" >
-                <button @click="remove(note.id)">X</button>
+     <div class="notes-container">
+            <div class="note-preview clean-list" v-for="note in notes" :key="note.id" >
+                <button class="btn" @click="remove(note.id)">X</button>
                 <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
                 </router-link>      
-            </li>
+            </div>
 
-        </ul>
+        
+        </div>
     </section>
 `,
   mounted() {
@@ -30,9 +30,8 @@ export default {
     remove(noteId) {
       this.$emit('remove', noteId)
     },
-    save(noteId) {
-      console.log
-      this.$emit('save', noteId)
+    save() {
+      this.$emit('save', this.note)
     },
   },
   computed: {
