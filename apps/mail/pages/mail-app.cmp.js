@@ -16,8 +16,7 @@ export default {
         ></mail-filter>
         <mail-sorting
         class="mail-sorting">
-            </mail-sorting>
-            
+            </mail-sorting>          
                 <mail-list class="mail-list"
                 v-if="mails"
                 :mails="mailsToShow" 

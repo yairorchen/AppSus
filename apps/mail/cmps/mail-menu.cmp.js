@@ -5,7 +5,7 @@ export default {
     props: ['mails'],
     template:`
     <aside class=" nav-menu">
-        <button class="btn-humburger" @click="toggleMenu()"> {{isMenuOpen ? '☰' : '☰'}} </button>
+        <button class="btn-humburger" @click="toggleMenu()">☰</button>
         <div class="menu-items flex" v-if="isMenuOpen">
             <div>
                 <button  class="compose-btn"

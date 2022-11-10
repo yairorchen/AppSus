@@ -9,5 +9,5 @@
 .sort-opt-btn{
     padding: 3px;
     border-radius: 5px;
-    border: 0;
+    border: 1px solid var(--clr3);
 }
