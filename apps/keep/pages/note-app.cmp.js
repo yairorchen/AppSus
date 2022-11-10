@@ -10,9 +10,11 @@ export default {
   name: 'note-app',
   template: `
   
-        <section>
+        <section >
             <note-filter @filter="filter"/>
+            <div class="flex justify-center">
             <router-link  to='/keep/add'><div class="new-note-link">Wright a note...</div></router-link>
+            </div>
              <router-view @save="save" @done="done"></router-view>
             <note-list
             v-if="notes" 
@@ -75,9 +77,15 @@ export default {
     notesToShow() {
       console.log(this.notes)
       const regex = new RegExp(this.filterBy.title, 'i')
-      //   if (!this.filterBy.type)
-      return this.notes.filter((note) => regex.test(note.info.title))
+      if (!this.filterBy.type) {
+        return this.notes.filter((note) => regex.test(note.info.title))
+      }
+      return this.notes.filter(
+        (note) =>
+          regex.test(note.info.title) && note.type === this.filterBy.type
+      )
     },
+
     toggleShown() {
       this.isShow = false
     },

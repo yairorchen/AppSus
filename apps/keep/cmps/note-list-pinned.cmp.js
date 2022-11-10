@@ -1,17 +1,12 @@
 import notePreview from './note-preview.cmp.js'
-import notePinned from './note-list-pinned.cmp.js'
 
 export default {
   props: ['notes'],
   name: 'note-list',
   template: `
-    <!-- <router-link  to='/keep/add'><div @click="toggleShown()" v-if="isShow" class="new-note-link">Wright a note...</div></router-link> -->
-    <section class="notes-layout">
-     <div class="notes-container">
-
-    <!-- <note-pinned :notes="notes" /> -->
-
+   
   <div class="note-preview" v-for="note in notes" :key="note.id" :style="note.style" >
+            <div v-if="note.isPinned">
               <div @click="togglePin(note.id)">📌</div>
                 <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
@@ -22,12 +17,10 @@ export default {
                 </button>
                 <div class="dots"  @click="remove(note.id)">︙</div>
               </div>  
-
+            </div> 
           </div>
-      
-     </div>
-    
-    </section>
+ 
+
 `,
   mounted() {
     console.log(this.notes)
@@ -75,6 +68,5 @@ export default {
   },
   components: {
     notePreview,
-    notePinned,
   },
 }

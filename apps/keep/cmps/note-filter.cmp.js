@@ -7,11 +7,12 @@ export default {
             type="text"
             placeholder="Search "/>
         <div>
-            <select name="type" id="Type" v-model = "filterBy.type">
+            <select class="type-filter" @change="filter" name="type" id="Type" v-model = "filterBy.type">
               <option value="note-txt">Text</option>
               <option value="note-video">Video</option>
               <option value="note-img">Imag</option>
               <option value="note-todos">Todo</option>
+              <option value="">all</option>
             </select>
         </div>
         
@@ -21,7 +22,7 @@ export default {
     return {
       filterBy: {
         title: '',
-        type: null,
+        type: '',
       },
     }
   },

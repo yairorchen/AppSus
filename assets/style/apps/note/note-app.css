@@ -45,6 +45,8 @@ hr {
 
 }
 
+
+
 .todo {
     cursor: pointer;
 }
@@ -52,6 +54,12 @@ hr {
 .imp {
     background-color: rgba(240, 248, 255, 0);
     border: 0;
+}
+
+.dots {
+    font-size: 1rem;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .imp input {
@@ -101,7 +109,7 @@ hr {
 }
 
 .new-note-link {
-    margin: 20px 0 0 20px;
+    margin: 20px;
     font-size: 1.2rem;
     height: 46px;
     width: 80vw;
@@ -116,11 +124,29 @@ hr {
     text-transform: uppercase;
 }
 
+.note-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.note-filter>* {}
+
+.type-filter {
+    margin-inline-start: 30px;
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 0 7px 0px;
+}
+
 .search {
     border-radius: 8px;
     border: 0;
     box-shadow: 0 0 7px 0px;
 }
+
 
 .btn {
     border: 0;
@@ -143,9 +169,7 @@ hr {
         width: 600px
     }
 
-    .new-note-link {
-        width: 600px
-    }
+
 
 }
 
@@ -155,6 +179,9 @@ hr {
         width: 750px
     }
 
+    .new-note-link {
+        width: 600px
+    }
 }
 
 @media screen and (min-width: 1040px) {

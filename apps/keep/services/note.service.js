@@ -15,7 +15,7 @@ const KeepData = [
   {
     id: 'n101',
     type: 'note-txt',
-    isPinned: true,
+    isPinned: false,
     info: {
       txt: 'Fullstack Me Baby!',
       title: 'yalla beitar',
@@ -24,6 +24,7 @@ const KeepData = [
   {
     id: 'n102',
     type: 'note-img',
+    isPinned: false,
     info: {
       url: '/assets/img/Malawach.jpg',
       txt: 'puki is the king',
@@ -36,6 +37,7 @@ const KeepData = [
   {
     id: 'n1088',
     type: 'note-img',
+    isPinned: true,
     info: {
       url: '/assets/img/yair-photo.jpeg',
       txt: 'puki is the king wallaaa',
@@ -48,6 +50,7 @@ const KeepData = [
   {
     id: 'n1d88',
     type: 'note-video',
+    isPinned: true,
     info: {
       url: 'https://www.youtube.com/watch?v=sWOrd50HYa4',
       txt: 'puki is the king wallaaa',
@@ -60,6 +63,7 @@ const KeepData = [
   {
     id: 'n1dbb8',
     type: 'note-video',
+    isPinned: false,
     info: {
       url: 'https://www.youtube.com/embed/008UXircX3VdM',
       txt: 'shine on you crazy diamond',
@@ -72,6 +76,7 @@ const KeepData = [
   {
     id: 'n103',
     type: 'note-todos',
+    isPinned: false,
     info: {
       txt: 'Fullstack Me Baby!',
       title: 'yalla beitar',
@@ -94,7 +99,18 @@ function createNote(type = 'note-txt') {
     id: null,
     type,
     isPined: false,
-    info: { title: '', txt: '' },
+    info: {
+      url: '',
+      title: '',
+      txt: '',
+      todos: [
+        {
+          id: utilService.makeId(),
+          txt: 'wright your first task',
+          doneAt: null,
+        },
+      ],
+    },
     style: {},
   }
 }

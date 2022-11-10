@@ -1,12 +1,13 @@
 .app-header {
-  background-color: var(--clr5);
-  color: var(--secondary-clr1);
+  background-color: var(--clr1);
+  color: var(--secondary-clr3);
   padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 10px 0px;
+
 }
 
-@media(max-width: 720px) {
-  .app-header {
-    background-color: var(--clr3);
-    color: var(--secondary-clr2);
-  }
-}
+
+@media(max-width: 720px) {}
