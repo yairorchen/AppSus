@@ -3,5 +3,11 @@
 
 .searce-filter{
     border-radius: 8px;
-    width: 50%;
+    width: 80%;
+}
+
+.sort-opt-btn{
+    padding: 3px;
+    border-radius: 5px;
+    border: 0;
 }

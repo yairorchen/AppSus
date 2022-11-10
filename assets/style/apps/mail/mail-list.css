@@ -3,10 +3,9 @@
 
 .mail-line{
     border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-    margin: 0.8rem;
+    margin: 0.5rem;
     font-size: 1.1rem;
-    padding: 5px;
-    transition: .4s;
+    transition: .3s;
 }
 
 .mail-read{
@@ -17,6 +16,24 @@
     cursor: pointer;
     box-shadow: 1px 1px 3px 1px #5D5D5D;
 }
+
+.name{
+    min-width: 10%;
+    margin-right: 5px;
+}
+
+.subject{
+    width: 55%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sent-at{
+    width: 25%;
+}
+
+
 
 .mail-line-btn{
     cursor: pointer;
@@ -29,6 +46,14 @@
 }
 
 .mail-line-btn:hover{
-    transition: .5s;
+    transition: .4s;
     background-color: rgba(197, 197, 197, 0.687);
+}
+
+.mail-details{
+    border: 1px solid rgba(107, 107, 107, 0.344);
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
