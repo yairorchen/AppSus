@@ -4,22 +4,18 @@ export default {
     name:'mail-menu',
     props: ['mails'],
     template:`
-    <aside class="flex flex-column">
-        <button class="btn-humburger" @click="toggleMenu()"> {{isMenuOpen ? 'X' : '☰'}} </button>
-        <ul class="clean-list" v-if="isMenuOpen">
-            <li>
-                <button 
+    <aside class=" nav-menu">
+        <button class="btn-humburger" @click="toggleMenu()"> {{isMenuOpen ? '☰' : '☰'}} </button>
+        <div class="menu-items flex" v-if="isMenuOpen">
+            <div>
+                <button  class="compose-btn"
                 @click="toggleCompose"
                 >Compose</button>
-                <new-mail v-if="isShow" @saveEmail="saveEmail"></new-mail>
-            <!-- <router-link
-             class="compose-link"
-              :to="{name:'compose'}"
-              >Compose</router-link> -->
-            
-            </li>
-            <li>Unread <span v-if="mails"> {{showUnreadMails}} </span></li>
-        </ul>
+                <new-mail v-if="isShow" @saveEmail="saveEmail"></new-mail>            
+            </div>
+            <div class="income-mails">Income Mails <span> {{mails.length}} </span></div>
+            <div>Unread <span v-if="mails"> {{showUnreadMails}} </span></div>
+        </div>
     </aside>
     `,
     data(){

@@ -5,7 +5,7 @@ export default {
     name:'mail-details',
     props: ['id'],
     template:`
-    <section>
+    <section class="mail-details flex flex-column align-items-center">
         <h2 v-if="mail"> {{ mail.subject }} </h2>
         <p v-if="mail && !isLong" > {{ mail.body }} </p>
         <long-text v-if="mail && isLong" :txt="mail.body"/>

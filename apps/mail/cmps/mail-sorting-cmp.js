@@ -3,10 +3,10 @@ export default {
     template:`
     <section class="sorting-section">
         <label>Sort by:
-            <select 
+            <select class="sort-opt-btn"
             name="sort by" id=""
             @change="">
-                <option value="">-</option>        
+                <option value=""></option>        
                 <option value="title">Title</option>        
                 <option value="date">Date</option>        
             </select>

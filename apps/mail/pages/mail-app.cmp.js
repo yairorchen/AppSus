@@ -7,21 +7,24 @@ import mailSorting from "../cmps/mail-sorting-cmp.js"
 export default {
     name: 'mail-app',
     template: `
-    <mail-menu
-    :mails="mails" 
-    @addEmail="addEmail"></mail-menu>
-    <mail-filter 
-    @filter="filter"
-    ></mail-filter>
-    <mail-sorting>
-    </mail-sorting>
-    <section class="home-page">
-        <mail-list
-        v-if="mails"
-        :mails="mailsToShow" 
-        >
-    </mail-list>
-        <router-view></router-view>
+    <section class="mail-app">
+        <mail-menu class="mail-menu"
+        :mails="mails" 
+        @addEmail="addEmail"></mail-menu>
+        <mail-filter class="mail-filter"
+        @filter="filter"
+        ></mail-filter>
+        <mail-sorting
+        class="mail-sorting">
+            </mail-sorting>
+            
+                <mail-list class="mail-list"
+                v-if="mails"
+                :mails="mailsToShow" 
+                >
+            </mail-list>
+            <router-view></router-view>
+        
     </section>
     `,
     data() {

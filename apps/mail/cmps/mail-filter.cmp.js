@@ -2,13 +2,14 @@ export default {
     name:'mail filter',
     template:`
     <section class="filter-section">
-        <input class="searce-filter" placeholder="Search in email subjects"
+        <input class="searce-filter" placeholder="Search 🔍"
         type="search" name="flter"
         @input="filter"
         v-model="filterBy.subject" 
         />
-        <label>Unread emails
+        <label>Unread
             <input type="checkbox"
+            title="Unread mails only"
             v-model="filterBy.isUnRead"  name="emails read"
             @change="filter"
             />

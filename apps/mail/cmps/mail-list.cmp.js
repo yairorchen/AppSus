@@ -5,7 +5,6 @@ export default {
     props: ['mails'],
     template: `
     <section v-if="!isClicked">
-        <h2>Mail list home</h2>
         <ul class="clean-list">
             <li v-for="mail in mails" :key="mail.id">
                 <router-link 

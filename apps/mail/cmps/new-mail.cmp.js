@@ -24,7 +24,6 @@ export default {
     data() {
         return {
             emptyMail: mailService.getEmptyMail()
-           
         }
     },
     created() {
