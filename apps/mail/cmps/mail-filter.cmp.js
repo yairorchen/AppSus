@@ -5,7 +5,7 @@ export default {
         <input class="searce-filter" placeholder="Search in email subjects"
         type="search" name="flter"
         @input="filter"
-        v-model="filterBy.subjectTxt" 
+        v-model="filterBy.subject" 
         />
         <label>Unread emails
             <input type="checkbox"
@@ -18,7 +18,7 @@ export default {
     data(){
         return {
             filterBy: {
-                subjectTxt: null,
+                subject: null,
                 isUnRead: false
             }
         }

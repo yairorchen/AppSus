@@ -1,33 +1,48 @@
+import { mailService } from "../services/mail.service.js"
 export default {
-    name:'new-mail',
-    template:`
+    name: 'new-mail',
+    template: `
     <section class="new-mail-section">
+        <router-link
+        to="/mail">X
+        </router-link>
         <h2>New mail</h2>
-        <form>
-            <input type="email" name="to" placeholder="to"/>
-        <input type="text" placeholder="Subject">
-            <textarea name="mail content"  placeholder="Compose email " cols="30" rows="10"></textarea>
+        <form @submit.stop.prevent="saveMail">
+            <input type="email" name="to"
+            placeholder="to"
+            v-model="emptyMail.to"/>
+            <input type="text" placeholder="Subject"
+            v-model="emptyMail.subject">
+            <textarea name="mail content"  placeholder="Compose email " cols="30" rows="10"
+            v-model="emptyMail.body"></textarea>
             <button class="send-mail-btn">
-            <router-link to="/mail">Send</router-link>
-            </button>
+            Send
+        </button>
         </form>
     </section>
     `,
-    data(){
+    data() {
         return {
-
+            emptyMail: mailService.getEmptyMail()
+           
         }
     },
-    created(){
+    created() {
 
     },
-    methods:{
+    methods: {
+        saveMail() {
+            const newMail = {
+               ...this.emptyMail
+            }
+            console.log('save mail');
+            this.$emit('saveEmail', newMail)
+        }
+    },
+    computed: {
 
     },
-    computed:{
-
-    },
-    components:{
+    components: {
 
     }
 }
