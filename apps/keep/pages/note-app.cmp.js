@@ -7,20 +7,18 @@ import noteAdd from '../pages/note-add.cmp.js'
 import noteDetails from '../pages/note-details.cmp.js'
 
 export default {
-  template: `
   name: 'note-app',
+  template: `
+  
         <section>
             <note-filter @filter="filter"/>
-             <router-view @save="save"></router-view>
+            <router-link  to='/keep/add'><div class="new-note-link">Wright a note...</div></router-link>
+             <router-view @save="save" @done="done"></router-view>
             <note-list
             v-if="notes" 
             @save="save"
             @remove="remove"
             :notes="notesToShow"/>
-            
-            
-
-           
         </section>
     `,
   created() {
@@ -33,6 +31,7 @@ export default {
     return {
       notes: null,
       filterBy: {},
+      isShow: true,
     }
   },
   methods: {
@@ -68,12 +67,18 @@ export default {
         })
       }
     },
+    // newNote(type){
+    //     noteService.createNote(type)
+    // }
   },
   computed: {
     notesToShow() {
       console.log(this.notes)
       const regex = new RegExp(this.filterBy.title, 'i')
       return this.notes.filter((note) => regex.test(note.info.title))
+    },
+    toggleShown() {
+      this.isShow = false
     },
   },
 

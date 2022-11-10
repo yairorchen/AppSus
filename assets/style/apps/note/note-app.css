@@ -1,3 +1,7 @@
+hr {
+    color: rgb(255, 255, 255);
+}
+
 .note-preview {
     background-color: rgba(255, 228, 196, 0);
     width: 90vw;
@@ -30,7 +34,7 @@
 }
 
 .note-add {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 1);
     width: 80vw;
     margin: 20px;
     border-radius: 10px;
@@ -38,6 +42,27 @@
     z-index: 10;
     box-shadow: 0 0 12px 0px;
 
+
+}
+
+.todo {
+    cursor: pointer;
+}
+
+.imp {
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+}
+
+.imp input {
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.color-input {
+    position: absolute;
+    z-index: 10;
 }
 
 .clean-input {

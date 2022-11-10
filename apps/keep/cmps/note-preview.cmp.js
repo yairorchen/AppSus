@@ -2,7 +2,7 @@ export default {
   props: ['note'],
   name: 'note-preview',
   template: `
-  
+
         <div> 
               <h3 class="title">{{note.info.title}}</h3>
                 <div>{{note.info.txt}}</div>
@@ -21,6 +21,7 @@ export default {
                   :src="videoUrl">
                 </iframe>
                 <img :src="imgUrl" v-if="note.type==='note-img'"/>
+                <div class="flex justify-center"><div>🎨</div><div>🖼️</div><div>🖊️</div></div>
         </div>
           
         
