@@ -6,6 +6,7 @@ export const mailService = {
     get,
     remove,
     save,
+    getEmptyMail
 }
 
 const loggedinUser = {
@@ -105,5 +106,17 @@ function _createMails() {
     const MAIL = utilService.loadFromStorage(MAILS_KEY)
     if (!MAIL || !MAIL.length) {
         utilService.saveToStorage(MAILS_KEY, mailData)
+    }
+}
+
+function getEmptyMail(){
+    return {
+        to:'',
+        subject:'',
+        body:'',
+        name: 'moshe',
+        isRead: false,
+        sentAt: Date.now(),
+        from: 'momo@momo.com',
     }
 }

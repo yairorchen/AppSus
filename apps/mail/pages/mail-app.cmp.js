@@ -2,15 +2,19 @@ import { mailService } from "../services/mail.service.js"
 import mailList from "../cmps/mail-list.cmp.js"
 import mailMenu from "../cmps/mail-menu.cmp.js"
 import mailFilter from "../cmps/mail-filter.cmp.js"
+import mailSorting from "../cmps/mail-sorting-cmp.js"
+
 export default {
     name: 'mail-app',
     template: `
     <mail-menu
     :mails="mails" 
-    ></mail-menu>
+    @addEmail="addEmail"></mail-menu>
     <mail-filter 
     @filter="filter"
     ></mail-filter>
+    <mail-sorting>
+    </mail-sorting>
     <section class="home-page">
         <mail-list
         v-if="mails"
@@ -45,31 +49,31 @@ export default {
         },
         removeMail(bookId) {
             console.log('removeMail');
+        },
+        addEmail(email){
+            this.mails.push(email)
         }
     },
     computed: {
         mailsToShow() {
             if (!this.filterBy) return this.mails
             console.log('mailsToShow');
-            if (this.filterBy.subject){
-                let filteredMails = this.mails
-                if (this.filterBy.isUnRead){
-                    console.log('unread filter');
-                    filteredMails = filteredMails.filter(mail => !mail.isRead)
-                }
-                const regex = new RegExp(this.filterBy.subjectTxt, 'i')
-                return filteredMails.filter(mail => {
-                    console.log('mail', mail.subject);
-                    return regex.test(mail.subject)
-                })
-            }
-
+            const regex = new RegExp(this.filterBy.subject, 'i')
+            var filteredMails = this.mails.filter(mail => {
+                return regex.test(mail.subject)
+            })
+            if (this.filterBy.isUnRead){
+                filteredMails = filteredMails.filter(mail => !mail.isRead)
+                return filteredMails
+            } 
+            return filteredMails
         }
 
     },
     components: {
         mailList,
         mailMenu,
-        mailFilter
+        mailFilter,
+        mailSorting
     }
 }
