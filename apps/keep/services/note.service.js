@@ -24,9 +24,45 @@ const KeepData = [
     id: 'n102',
     type: 'note-img',
     info: {
-      url: 'http://some-img/me',
+      url: '/assets/img/Malawach.jpg',
       txt: 'puki is the king',
       title: 'Bobi and Me',
+    },
+    style: {
+      backgroundColor: '#00d',
+    },
+  },
+  {
+    id: 'n1088',
+    type: 'note-img',
+    info: {
+      url: '/assets/img/yair-photo.jpeg',
+      txt: 'puki is the king wallaaa',
+      title: 'Bobi and Me yaa',
+    },
+    style: {
+      backgroundColor: '#00d',
+    },
+  },
+  {
+    id: 'n1d88',
+    type: 'note-video',
+    info: {
+      url: 'https://www.youtube.com/watch?v=sWOrd50HYa4',
+      txt: 'puki is the king wallaaa',
+      title: 'Bobi and Me yaa',
+    },
+    style: {
+      backgroundColor: '#00d',
+    },
+  },
+  {
+    id: 'n1dbb8',
+    type: 'note-video',
+    info: {
+      url: 'https://www.youtube.com/embed/008UXircX3VdM',
+      txt: 'shine on you crazy diamond',
+      title: 'Best song',
     },
     style: {
       backgroundColor: '#00d',
@@ -41,6 +77,9 @@ const KeepData = [
       label: 'Get my stuff together',
       todos: [
         { txt: 'Driving liscence', doneAt: null },
+        { txt: 'master Js', doneAt: 187111111 },
+        { txt: 'master css', doneAt: 187111111 },
+        { txt: 'Coding with vue', doneAt: null },
         { txt: 'Coding power', doneAt: 187111111 },
       ],
     },
