@@ -70,6 +70,22 @@
 
 }
 
+.hide {
+    display: none;
+}
+
+.new-note-link {
+    margin: 20px 0 0 20px;
+    font-size: 1.2rem;
+    height: 46px;
+    width: 80vw;
+    border: 1px solid rgba(128, 128, 128, 0.391);
+    border-radius: 8px;
+    box-shadow: 0 0 7px 0px;
+    padding: 10px;
+
+}
+
 .title {
     text-transform: uppercase;
 }
@@ -95,6 +111,14 @@
 
     .notes-container {
         width: 500px
+    }
+
+    .note-add {
+        width: 600px
+    }
+
+    .new-note-link {
+        width: 600px
     }
 
 }

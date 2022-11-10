@@ -4,7 +4,7 @@ export default {
   props: ['notes'],
   name: 'note-list',
   template: `
-    <router-link  to='/keep/add' @save="save()">Add new note</router-link>
+    <router-link @click="toggleShown()" v-if="isShow" to='/keep/add'><div class="new-note-link">Wright a note...</div></router-link>
     <section class="notes-layout">
      <div class="notes-container">
             <div class="note-preview" v-for="note in notes" :key="note.id" >
@@ -24,14 +24,15 @@ export default {
   data() {
     return {
       notesToShow: this.notes,
+      isShow: true,
     }
   },
   methods: {
     remove(noteId) {
       this.$emit('remove', noteId)
     },
-    save() {
-      this.$emit('save', this.note)
+    toggleShown() {
+      this.isShow = false
     },
   },
   computed: {
