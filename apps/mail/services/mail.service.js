@@ -17,31 +17,61 @@ const MAILS_KEY = 'mailsDB'
 
 const mailData = [
     {
-        id: 'e101',
+        id: utilService.makeId(),
         name: 'moshe',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
     }, {
-        id: 'e102',
+        id: utilService.makeId(),
         name: 'yossi',
         subject: 'love you!',
         body: 'love love love to catch up sometimes and! mister lova lova! its a fantastic tactic to write over 100 chars for tests what do you think?!?',
         isRead: false,
-        sentAt: 1551134930594,
-        from: 'bobo@bobo.com',
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**10),        from: 'bobo@bobo.com',
         to: 'user@appsus.com'
     }, {
-        id: 'e103',
+        id: utilService.makeId(),
         name: 'puki',
         subject: 'want you!',
         body: 'want want want to catch up sometimes',
         isRead: false,
-        sentAt: 1551135930594,
-        from: 'puki@puki.com',
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    }, {
+        id: utilService.makeId(),
+        name: 'puki',
+        subject: 'want you!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    }, {
+        id: utilService.makeId(),
+        name: 'puki',
+        subject: 'want you!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    }, {
+        id: utilService.makeId(),
+        name: 'puki',
+        subject: 'want you!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    }, {
+        id: utilService.makeId(),
+        name: 'puki',
+        subject: 'want you!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        from: 'puki@puki.com',
         to: 'user@appsus.com'
     }
 ]

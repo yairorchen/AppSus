@@ -21,6 +21,7 @@
 @import 'apps/mail/mail-list.css';
 @import 'apps/mail/long-text.cmp.css';
 @import 'apps/mail/new-mail.cmp.css';
+@import 'apps/mail/mail-filter.cmp.css';
 
 /* notes app */
 @import 'apps/note/note-app.css';

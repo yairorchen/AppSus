@@ -1,16 +1,20 @@
 import { mailService } from "../services/mail.service.js"
 import mailList from "../cmps/mail-list.cmp.js"
 import mailMenu from "../cmps/mail-menu.cmp.js"
+import mailFilter from "../cmps/mail-filter.cmp.js"
 export default {
     name: 'mail-app',
     template: `
     <mail-menu
     :mails="mails" 
     ></mail-menu>
+    <mail-filter 
+    @filter="filter"
+    ></mail-filter>
     <section class="home-page">
         <mail-list
         v-if="mails"
-        :mails="mails" 
+        :mails="mailsToShow" 
         >
     </mail-list>
         <router-view></router-view>
@@ -37,7 +41,7 @@ export default {
         },
         filter(filterBy) {
             console.log('filterBy', filterBy);
-            // this.filterBy = filterBy
+            this.filterBy = filterBy
         },
         removeMail(bookId) {
             console.log('removeMail');
@@ -45,20 +49,27 @@ export default {
     },
     computed: {
         mailsToShow() {
+            if (!this.filterBy) return this.mails
             console.log('mailsToShow');
-            return this.mails
+            if (this.filterBy.subject){
+                let filteredMails = this.mails
+                if (this.filterBy.isUnRead){
+                    console.log('unread filter');
+                    filteredMails = filteredMails.filter(mail => !mail.isRead)
+                }
+                const regex = new RegExp(this.filterBy.subjectTxt, 'i')
+                return filteredMails.filter(mail => {
+                    console.log('mail', mail.subject);
+                    return regex.test(mail.subject)
+                })
+            }
 
-            // if (!this.filterBy) return this.mails
-            // const regex = new RegExp(this.filterBy.name, 'i')
-            // return this.mails.filter(mail => {
-            //     console.log('mail', mail);
-            //     return regex.test(mail.title)
-            // })
         }
 
     },
     components: {
         mailList,
-        mailMenu
+        mailMenu,
+        mailFilter
     }
 }

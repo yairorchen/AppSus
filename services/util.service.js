@@ -2,6 +2,7 @@ export const utilService = {
   makeId,
   saveToStorage,
   loadFromStorage,
+  getRandomIntInclusive
 }
 
 function saveToStorage(key, value) {
@@ -11,6 +12,10 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
   let data = localStorage.getItem(key)
   return data ? JSON.parse(data) : undefined
+}
+
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 function makeId(length = 5) {
