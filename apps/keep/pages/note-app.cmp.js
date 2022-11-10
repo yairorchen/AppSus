@@ -75,6 +75,7 @@ export default {
     notesToShow() {
       console.log(this.notes)
       const regex = new RegExp(this.filterBy.title, 'i')
+      //   if (!this.filterBy.type)
       return this.notes.filter((note) => regex.test(note.info.title))
     },
     toggleShown() {
