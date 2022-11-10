@@ -8,6 +8,7 @@ export const noteService = {
   remove,
   save,
   createNote,
+  createTodo,
 }
 const KEEP_KEY = 'keeps'
 const KeepData = [
@@ -41,7 +42,7 @@ const KeepData = [
       title: 'Bobi and Me yaa',
     },
     style: {
-      backgroundColor: '#00d',
+      backgroundColor: 'rgb(108, 145, 229)',
     },
   },
   {
@@ -53,7 +54,7 @@ const KeepData = [
       title: 'Bobi and Me yaa',
     },
     style: {
-      backgroundColor: '#00d',
+      backgroundColor: 'rgb(208, 134, 129)',
     },
   },
   {
@@ -65,7 +66,7 @@ const KeepData = [
       title: 'Best song',
     },
     style: {
-      backgroundColor: '#00d',
+      backgroundColor: 'rgb(208, 239, 229)',
     },
   },
   {
@@ -76,11 +77,11 @@ const KeepData = [
       title: 'yalla beitar',
       label: 'Get my stuff together',
       todos: [
-        { txt: 'Driving liscence', doneAt: null },
-        { txt: 'master Js', doneAt: 187111111 },
-        { txt: 'master css', doneAt: 187111111 },
-        { txt: 'Coding with vue', doneAt: null },
-        { txt: 'Coding power', doneAt: 187111111 },
+        { id: '109', txt: 'Driving liscence', doneAt: null },
+        { id: '110', txt: 'master Js', doneAt: 187111111 },
+        { id: '119', txt: 'master css', doneAt: 187111111 },
+        { id: '129', txt: 'Coding with vue', doneAt: null },
+        { id: '139', txt: 'Coding power', doneAt: 187111111 },
       ],
     },
   },
@@ -88,10 +89,23 @@ const KeepData = [
 
 _createKeep()
 
-function print() {
-  console.log('lalal')
+function createNote(type = 'note-txt') {
+  return {
+    id: null,
+    type,
+    isPined: false,
+    info: { title: '', txt: '' },
+    style: {},
+  }
 }
 
+function createTodo() {
+  return {
+    id: utilService.makeId(),
+    txt: 'new!',
+    doneAt: null,
+  }
+}
 function query() {
   console.log('query')
   return storageService.query(KEEP_KEY)
@@ -113,14 +127,6 @@ function save(note) {
     console.log('new')
     KeepData.push(note)
     return storageService.post(KEEP_KEY, note)
-  }
-}
-function createNote() {
-  return {
-    id: null,
-    info: { title: '', txt: '' },
-    type: 'txt',
-    style: '',
   }
 }
 

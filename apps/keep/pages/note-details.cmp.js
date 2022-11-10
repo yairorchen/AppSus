@@ -3,8 +3,8 @@ import { noteService } from '../services/note.service.js'
 export default {
   name: 'note-details',
   template: `
-  <h3>note</h3>
-  <div class="note-details flex flex-column align-center justify-center" v-if="note">
+  
+  <div :style="note.style" class="note-details flex flex-column align-center justify-center" v-if="note">
     <router-link to="/keep" @click="saveNote()">Back</router-link>
     
     <input class="clean-input" type="text" v-model="note.info.title">
@@ -14,7 +14,28 @@ export default {
      <iframe  v-if="note.type ==='note-video'" width="320" height="250"
     :src="videoUrl">
     </iframe>
+    <div class="todos-preview" v-if="note.type ==='note-todos'">
+        <div @click="newTodo()">+</div>
+        <div v-for="todo in note.info.todos">
+                
+            <div class="todo flex" v-if="!todo.doneAt"><p @click="isDone(todo)">⬜</p> <input class="clean-input" type="text" v-model="todo.txt"></div>
+        </div>
+        <hr>
+        <div v-for="todo in note.info.todos">
+            <div class="todo" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p>{{todo.txt}}</div>
+        </div>
     </div>
+    <div class="flex justify-center">
+        <button class="imp"><input v-model="color" class="color-input" type="color"
+            @input="changeColor" title="background color">🎨</input>
+        </button>
+        <div>🖼️</div>
+        <div>🖊️</div>
+    </div>
+    <div></div>
+</div>
+
+
     `,
   created() {
     const id = this.$route.params.id
@@ -23,11 +44,32 @@ export default {
   data() {
     return {
       note: null,
+      color: 'blue',
     }
   },
   methods: {
     saveNote() {
       this.$emit('save', this.note)
+    },
+    isDone(todo) {
+      console.log('done')
+      //   this.$emit('done', todo)
+      var todoId = todo.id
+      const idx = this.note.info.todos.findIndex((todo) => todo.id === todoId)
+      if (!this.note.info.todos[idx].doneAt) {
+        this.note.info.todos[idx].doneAt = Date.now()
+      } else {
+        this.note.info.todos[idx].doneAt = null
+      }
+      console.log(todo)
+    },
+    newTodo() {
+      const newTodo = noteService.createTodo()
+      this.note.info.todos.unshift(newTodo)
+    },
+    changeColor(color) {
+      console.log(color)
+      this.note.style = { backgroundColor: this.color }
     },
   },
   computed: {
