@@ -3,6 +3,7 @@ import { noteService } from '../services/note.service.js'
 export default {
   props: [],
   template: `
+  <div class="flex flex-column align-center ">
   <div class="note-add flex flex-column align-center justify-center">
      <input class="clean-input" type="text" v-model="note.info.title"  placeholder="Wright Title">
     <textarea v-if="note.type==='note-txt'"  class="clean-input" cols="45" rows="5" v-model = "note.info.txt" placeholder="Wright your note"></textarea>
@@ -17,6 +18,7 @@ export default {
                 <div @click="noteType('note-todos')">⬜</div>
             </div>
              <router-link to="/keep" @click="saveNote()">Close</router-link>
+  </div>
   </div>
     `,
 
