@@ -7,6 +7,8 @@ iframe {
     height: 50px;
 }
 
+
+
 .note-preview {
     background-color: rgba(255, 228, 196, 0);
     width: 85vw;
@@ -50,10 +52,13 @@ iframe {
 
 }
 
-
+.pointer {
+    cursor: pointer;
+}
 
 .todo {
     cursor: pointer;
+    margin-inline-start: 15px;
 }
 
 .imp {
@@ -62,9 +67,26 @@ iframe {
 }
 
 .dots {
-    font-size: 1rem;
     margin-left: 20px;
+    font-weight: 900;
     cursor: pointer;
+    align-items: center;
+}
+
+.done {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.hover-show {
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.hover-show:hover {
+    opacity: 1;
 }
 
 .imp input {
@@ -158,6 +180,10 @@ iframe {
 .btn {
     border: 0;
     background-color: rgba(240, 248, 255, 0);
+    margin-inline-start: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+
 }
 
 @media screen and (min-width: 340px) {

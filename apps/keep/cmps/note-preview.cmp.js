@@ -15,7 +15,7 @@ export default {
                   </div>
                   <hr>
                   <div v-for="todo in note.info.todos">
-                      <p class="black-white" v-if="todo.doneAt">❎{{todo.txt}}</p>
+                      <p class="black-white flex" v-if="todo.doneAt">❎<p class=" done">{{todo.txt}}</p></p>
                   </div>
                 </div>
                 <iframe  v-if="note.type ==='note-video'" width="220" height="140"

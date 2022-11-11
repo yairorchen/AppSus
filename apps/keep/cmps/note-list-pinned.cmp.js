@@ -29,7 +29,7 @@ export default {
     return {
       notesToShow: this.notes,
       isShow: true,
-      color: '',
+      color: '#ebfeff',
     }
   },
   methods: {
