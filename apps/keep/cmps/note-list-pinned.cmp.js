@@ -7,20 +7,24 @@ export default {
    <div class="notes-pinned notes-container">
   <div v-for="note in notes" :key="note.id" >
             <div  class="note-preview" v-if="note.isPinned"  :style="note.style">
-              <div @click="togglePin(note.id)">📌</div>
-                <router-link :to="'/keep/' + note.id">
+              <div class="pointer" @click="togglePin(note.id)">📌</div>
+                
+              <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
                 </router-link>
+
               <div class="hover-show flex justify-between">
                 <div class="dots flex"  @click="toggleOptionOpen()">︙</div>
-                <!-- <div class="dots flex"  @click="remove(note.id)">︙</div> -->
+      
                 <button class="imp black-white"> <input v-model="color" class="color-input" type="color"
                    @change="changeColor(note.id)" title="background color">🎨
                 </button>
+
                 <div class="notes-option" :class="{hide:!optionOpen}">
-                  <p class="pointer option-item" @click="remove(note.id)">delete</p>
-                  <p class="pointer option-item">copy</p>
+                  <p class="pointer option-item" @click="remove(note.id)">Delete</p>
+                  <p class="pointer option-item" @click="duplicate(note)">Copy</p>
                 </div>
+
               </div>  
             </div> 
           </div>
@@ -41,6 +45,10 @@ export default {
   methods: {
     remove(noteId) {
       this.$emit('remove', noteId)
+      this.toggleOptionOpen()
+    },
+    duplicate(noteId) {
+      this.$emit('duplicate', noteId)
       this.toggleOptionOpen()
     },
     toggleShown() {

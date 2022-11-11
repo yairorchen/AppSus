@@ -22,7 +22,7 @@ export default {
         </div>
         <hr>
         <div v-for="todo in note.info.todos">
-            <div class="todo black-white flex" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p><p class=" done">{{todo.txt}}</p></div>
+            <div class="todo black-white flex" v-if="todo.doneAt"><p @click="isDone(todo)">☑️</p><p class=" done">{{todo.txt}}</p></div>
         </div>
     </div>
     <div class="flex justify-center">

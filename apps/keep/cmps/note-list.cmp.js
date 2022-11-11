@@ -10,6 +10,7 @@ export default {
 <note-pinned 
 @save="save"
 @remove="remove"
+@duplicate="duplicate"
  :notes="notes" />
 
      <div class="notes-container">
@@ -22,13 +23,13 @@ export default {
                 </router-link>
                <div class="hover-show flex justify-between">
                 <div class="dots flex"  @click="toggleOptionOpen()">︙</div>
-                <!-- <div class="dots flex"  @click="remove(note.id)">︙</div> -->
+              
                 <button class="imp black-white"> <input v-model="color" class="color-input" type="color"
                    @change="changeColor(note.id)" title="background color">🎨
                 </button>
                 <div class="notes-option" :class="{hide:!optionOpen}">
                   <p class="pointer option-item" @click="remove(note.id)">delete</p>
-                  <p class="pointer option-item">copy</p>
+                  <p class="pointer option-item" @click="duplicate(note)">copy</p>
                 </div>
               </div>  
 
@@ -52,6 +53,10 @@ export default {
   methods: {
     remove(noteId) {
       this.$emit('remove', noteId)
+      this.toggleOptionOpen()
+    },
+    duplicate(note) {
+      this.$emit('duplicate', note)
       this.toggleOptionOpen()
     },
     toggleShown() {
