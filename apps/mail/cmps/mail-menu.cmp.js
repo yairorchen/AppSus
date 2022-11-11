@@ -10,18 +10,22 @@ export default {
             <div>
                 <button  class="compose-btn"
                 @click="toggleCompose"
-                >Compose</button>
+                >  <img src="./assets/img/pencil.png" width=15 alt="" /> Compose</button>
                 <new-mail v-if="isShow" @saveEmail="saveEmail"></new-mail>            
             </div>
-            <div class="income-mails">Income Mails <span> {{mails.length}} </span></div>
-            <div>Unread <span v-if="mails"> {{showUnreadMails}} </span></div>
+            <div v-if="mails" class="income-mails">Income Mails <small> {{mails.length}} </small></div>
+            <div
+            @click="filterUnread"
+            >Unread <small v-if="mails"> {{showUnreadMails}} </small></div>
+
         </div>
     </aside>
     `,
     data(){
         return {
             isMenuOpen: true,
-            isShow: false
+            isShow: false,
+            isUnread: false
         }
     },
     created(){
@@ -38,6 +42,12 @@ export default {
             this.isShow = false
             mailService.save(email)
             this.$emit('addEmail', email)
+        },
+        filterUnread(){
+            console.log('start filter');
+            this.isUnread = !this.isUnread
+            console.log('this.isUnread',this.isUnread);
+            this.$emit('filterUnread', this.isUnread)
         }
     },
     computed:{
@@ -47,6 +57,5 @@ export default {
     },
     components:{
         newMail
-
     }
 }

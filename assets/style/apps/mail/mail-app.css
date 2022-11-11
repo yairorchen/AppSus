@@ -1,37 +1,9 @@
-.btn-humburger{
-    font-size: 1.5rem;
-    background: fixed;
-    width: fit-content;
-    margin-bottom: 15px;
-    border: 2px solid var(--clr3);
-    border-radius: 5px;
-}
 
-.nav-menu{
-    font-size: 1.2rem;
-    gap: 15px;
-}
-
-.menu-items{
-    flex-direction: column;
-    gap: 12px;
-}
-
-.compose-btn{
-    border: 0;
-    border-radius: 12px;
-    background-color: #c2e7ff;
-    font-size: 1.2rem;
-    transition: .4s;
-}
-.compose-btn:hover{
-    box-shadow: 0px 0px 2px 2px #5D5D5D;
-    background-color: #8dd1ff;
-}
+/* MAIL APP */
 
 .mail-app{
-    margin: 12px;
-    height: 55vh;
+    margin: 5px;
+    background-color: #f7f8fc;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -63,6 +35,9 @@
 }
 
 .mail-list{
+    background-color: var(--clr1);
+    padding: 10px;
+    border-radius: 10px;
     grid-area: center;
     grid-column: 2/-1;
     grid-row: 2/-1;

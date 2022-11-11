@@ -10,6 +10,7 @@ export default {
     <section class="mail-app">
         <mail-menu class="mail-menu"
         :mails="mails" 
+        @filterUnread="filterUnread"
         @addEmail="addEmail"></mail-menu>
         <mail-filter class="mail-filter"
         @filter="filter"
@@ -28,7 +29,7 @@ export default {
     `,
     data() {
         return {
-            filterBy: null,
+            filterBy: {},
             selectedMail: null,
             mails: null
         }
@@ -45,6 +46,11 @@ export default {
             // this.selectedBook = book
             console.log('selectMail');
         },
+        filterUnread(isUnread){
+            console.log('filterUnread - mail app');
+            this.filterBy['isUnread'] = isUnread
+            console.log('filterBy', this.filterBy);
+        },
         filter(filterBy) {
             console.log('filterBy', filterBy);
             this.filterBy = filterBy
@@ -58,6 +64,7 @@ export default {
     },
     computed: {
         mailsToShow() {
+            console.log('mailsToShow');
             if (!this.filterBy) return this.mails
             console.log('mailsToShow');
             const regex = new RegExp(this.filterBy.subject, 'i')
