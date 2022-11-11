@@ -20,7 +20,7 @@ export default {
     `,
     data(){
         return {
-            isMenuOpen: false,
+            isMenuOpen: true,
             isShow: false
         }
     },
