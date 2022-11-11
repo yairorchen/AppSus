@@ -12,15 +12,15 @@ export default {
     <!-- <note-pinned :notes="notes" /> -->
 
   <div class="note-preview" v-for="note in notes" :key="note.id" :style="note.style" >
-              <div @click="togglePin(note.id)">📌</div>
+              <div class="black-white pointer" @click="togglePin(note.id)">📌</div>
                 <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
                 </router-link>
-              <div class="flex justify-between">
-                <button class="imp"><input v-model="color" class="color-input" type="color"
-                   @input="changeColor(note.id)" title="background color">🎨</input>
+              <div class="hover-show flex justify-between">
+                <button class="imp black-white"> <input v-model="color" class="color-input" type="color"
+                   @change="changeColor(note.id)" title="background color">🎨
                 </button>
-                <div class="dots"  @click="remove(note.id)">︙</div>
+                <div class="dots flex"  @click="remove(note.id)">︙</div>
               </div>  
 
           </div>
@@ -36,7 +36,7 @@ export default {
     return {
       notesToShow: this.notes,
       isShow: true,
-      color: 'blue',
+      color: '#ebfeff',
     }
   },
   methods: {

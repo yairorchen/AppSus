@@ -13,7 +13,7 @@ export default {
                 </router-link>
               <div class="flex justify-between">
                 <button class="imp"><input v-model="color" class="color-input" type="color"
-                   @input="changeColor(note.id)" title="background color">🎨</input>
+                   @change="changeColor(note.id)" title="background color">🎨</input>
                 </button>
                 <div class="dots"  @click="remove(note.id)">︙</div>
               </div>  
@@ -29,7 +29,7 @@ export default {
     return {
       notesToShow: this.notes,
       isShow: true,
-      color: 'blue',
+      color: '#ebfeff',
     }
   },
   methods: {
@@ -40,12 +40,11 @@ export default {
       this.isShow = false
     },
     changeColor(noteId) {
-      console.log(this.color)
-      console.log(noteId)
       const idx = this.notesToShow.findIndex((note) => note.id === noteId)
       this.notesToShow[idx].style = { backgroundColor: this.color }
       this.save(this.notesToShow[idx])
     },
+
     save(note) {
       this.$emit('save', note)
     },

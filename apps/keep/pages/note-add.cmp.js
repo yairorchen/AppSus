@@ -12,10 +12,10 @@ export default {
     <input v-if="note.type==='note-todos'" class="clean-input" type="text" v-model="note.info.todos[0].txt"  placeholder="Wright your first task here!">
    
     <div class="flex justify-center">
-                <div @click="noteType('note-img')">🖼️</div>
-                <div @click="noteType('note-txt')">🖊️</div>
-                <div @click="noteType('note-video')">🎬</div>
-                <div @click="noteType('note-todos')">⬜</div>
+                <div class="black-white pointer" @click="noteType('note-img')">🖼️</div>
+                <div class="black-white pointer" @click="noteType('note-txt')">🖊️</div>
+                <div class="black-white pointer" @click="noteType('note-video')">🎬</div>
+                <div class="black-white pointer" @click="noteType('note-todos')">⬜</div>
             </div>
              <router-link to="/keep" @click="saveNote()">Close</router-link>
   </div>

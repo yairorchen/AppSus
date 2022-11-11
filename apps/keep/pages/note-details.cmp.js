@@ -15,22 +15,22 @@ export default {
     :src="videoUrl">
     </iframe>
     <div class="todos-preview" v-if="note.type ==='note-todos'">
-        <div @click="newTodo()">+</div>
+        <button class="btn" @click="newTodo()">+</button>
         <div v-for="todo in note.info.todos">
                 
             <div class="todo flex" v-if="!todo.doneAt"><p @click="isDone(todo)">⬜</p> <input class="clean-input" type="text" v-model="todo.txt"></div>
         </div>
         <hr>
         <div v-for="todo in note.info.todos">
-            <div class="todo" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p>{{todo.txt}}</div>
+            <div class="todo black-white flex" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p><p class=" done">{{todo.txt}}</p></div>
         </div>
     </div>
     <div class="flex justify-center">
-        <button class="imp"><input v-model="color" class="color-input" type="color"
-            @input="changeColor" title="background color">🎨</input>
+        <button class="imp black-white"><input v-model="color" class="color-input" type="color"
+            @input="changeColor" title="background color">🎨
         </button>
-        <div>🖼️</div>
-        <div>🖊️</div>
+        <!-- <div>🖼️</div>
+        <div>🖊️</div> -->
     </div>
     <div></div>
 </div>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       note: null,
-      color: 'blue',
+      color: '#ebfeff',
     }
   },
   methods: {
@@ -53,7 +53,6 @@ export default {
     },
     isDone(todo) {
       console.log('done')
-      //   this.$emit('done', todo)
       var todoId = todo.id
       const idx = this.note.info.todos.findIndex((todo) => todo.id === todoId)
       if (!this.note.info.todos[idx].doneAt) {
@@ -68,8 +67,8 @@ export default {
       this.note.info.todos.unshift(newTodo)
     },
     changeColor(color) {
-      console.log(color)
       this.note.style = { backgroundColor: this.color }
+      console.log(this.color)
     },
   },
   computed: {
