@@ -15,9 +15,7 @@ export default {
             v-model="emptyMail.subject">
             <textarea name="mail content"  placeholder="Compose email " cols="30" rows="10"
             v-model="emptyMail.body"></textarea>
-            <button class="send-mail-btn">
-            Send
-        </button>
+            <button class="send-mail-btn">Send</button>
         </form>
     </section>
     `,

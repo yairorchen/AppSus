@@ -4,6 +4,8 @@
 .searce-filter{
     border-radius: 8px;
     width: 80%;
+    background-color: #eaf1fb;
+    padding-left: 5px;
 }
 
 .sort-opt-btn{

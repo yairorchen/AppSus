@@ -3,8 +3,10 @@ export default {
     props: ['mail'],
     template: `
     <div @mouseover="isHoverToggle" @mouseleave="isNotHoverToggle" class="mail-line flex justify-between" :class="{'mail-read': mail.isRead}" >
-        <div class="name"> {{ mail.name }} </div>
-        <div class="subject"> {{ mail.subject }}</div>
+        <div class="start-line flex ">
+            <div class="name"> {{ mail.name }} </div>
+            <div class="subject"> {{ mail.subject }}</div>
+        </div>    
         <div v-if="!isHover" class="sent-at">
             <div> {{ new Date(mail.sentAt).toDateString() }} </div> 
         </div>  
