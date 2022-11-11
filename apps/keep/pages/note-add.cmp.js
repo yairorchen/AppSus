@@ -36,6 +36,7 @@ export default {
   methods: {
     saveNote() {
       this.$emit('save', this.note)
+
       console.log(this.note)
     },
     noteType(type) {

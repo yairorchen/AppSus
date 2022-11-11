@@ -10,12 +10,12 @@ export default {
   name: 'note-app',
   template: `
   
-        <section >
+        <section class="note-app" >
             <note-filter @filter="filter"/>
             <div class="flex justify-center">
-            <router-link  to='/keep/add'><div class="new-note-link">Wright a note...</div></router-link>
+            <router-link  to='/keep/add'><div v-if="isShow" @click="toggleShown()" class="new-note-link">Wright a note...</div></router-link>
             </div>
-             <router-view @save="save"></router-view>
+             <router-view @save="save" ></router-view>
             <note-list
             v-if="notes" 
             @save="save"
@@ -53,6 +53,26 @@ export default {
     filter(filterBy) {
       this.filterBy = filterBy
     },
+    // save(note) {
+    //   if (this.notes.includes(note.id)) {
+    //     var noteId = note.id
+    //     console.log('save from app')
+    //     noteService.save(note).then(() => {
+    //       const idx = this.notes.findIndex((note) => note.id === noteId)
+    //       this.notes.splice(idx, 1, note)
+    //     })
+    //   } else {
+    //     console.log('new from app')
+    //     noteService.save(note).then(() => {
+    //       this.notes.unshift(note)
+    //     })
+    //   }
+    //   this.close()
+    // },
+
+    newNote(type) {
+      noteService.createNote(type)
+    },
     save(note) {
       if (note.id) {
         var noteId = note.id
@@ -67,13 +87,21 @@ export default {
           this.notes.unshift(note)
         })
       }
+      this.close()
     },
-    // newNote(type){
-    //     noteService.createNote(type)
-    // }
+
+    toggleShown() {
+      this.isShow = !this.isShow
+    },
+    close() {
+      console.log('closing')
+      this.toggleShown()
+    },
   },
   computed: {
     notesToShow() {
+      console.log(this.notes)
+      if (!this.filterBy) return this.notes
       const regex = new RegExp(this.filterBy.title, 'i')
       if (!this.filterBy.type) {
         return this.notes.filter((note) => regex.test(note.info.title))
@@ -82,10 +110,6 @@ export default {
         (note) =>
           regex.test(note.info.title) && note.type === this.filterBy.type
       )
-    },
-
-    toggleShown() {
-      this.isShow = false
     },
   },
 

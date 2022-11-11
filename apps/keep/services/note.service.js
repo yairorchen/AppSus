@@ -98,7 +98,7 @@ function createNote(type = 'note-txt') {
   return {
     id: null,
     type,
-    isPined: false,
+    isPinned: false,
     info: {
       url: '',
       title: '',
@@ -106,12 +106,12 @@ function createNote(type = 'note-txt') {
       todos: [
         {
           id: utilService.makeId(),
-          txt: 'wright your first task',
+          txt: 'write your first task',
           doneAt: null,
         },
       ],
     },
-    style: '',
+    style: { backgroundColor: '#89b6b8' },
   }
 }
 
@@ -141,7 +141,7 @@ function save(note) {
   } else {
     console.log('new')
     KeepData.push(note)
-    return storageService.post(KEEP_KEY, note, false)
+    return storageService.post(KEEP_KEY, note)
   }
 }
 
