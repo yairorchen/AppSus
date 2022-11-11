@@ -1,5 +1,5 @@
 export default {
-    name:'mail filter',
+    name:'mail',
     template:`
     <section class="filter-section">
         <input class="searce-filter" placeholder="Search 🔍"

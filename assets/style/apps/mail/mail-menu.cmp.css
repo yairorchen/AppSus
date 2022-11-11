@@ -1,0 +1,51 @@
+
+/* MAIL MENU */
+
+.btn-humburger{
+    font-size: 1.5rem;
+    background: fixed;
+    width: fit-content;
+    margin-bottom: 15px;
+    border: 2px solid var(--clr3);
+    border-radius: 5px;
+}
+
+.nav-menu{
+    font-size: 1rem;
+    gap: 15px;
+}
+
+.menu-items{
+    flex-direction: column;
+    gap: 12px;
+}
+
+.compose-btn{
+    border: 0;
+    width: max-content;
+    border-radius: 12px;
+    background-color: #c2e7ff;
+    font-size: 1rem;
+    padding: 10px;
+    transition: .4s;
+}
+
+.compose-btn:hover{
+    box-shadow: 0px 0px 2px 2px var(--clr3);
+    background-color: #8dd1ff;
+}
+
+.income-mails{
+    margin: 8px;
+    font-weight: 600;
+}
+
+.unread-mails{
+    margin: 8px;
+}
+
+
+.active{
+    border-radius: 0 10px 10px 0;
+    background-color: rgb(138, 199, 255);
+}

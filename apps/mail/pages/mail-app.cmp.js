@@ -12,6 +12,7 @@ export default {
     <section class="mail-app">
         <mail-menu class="mail-menu"
         :mails="mails" 
+        @filterUnread="filterUnread"
         @addEmail="addEmail"></mail-menu>
         <mail-filter class="mail-filter"
         @filter="filter"
@@ -28,48 +29,51 @@ export default {
         
     </section>
     `,
-  data() {
-    return {
-      filterBy: null,
-      selectedMail: null,
-      mails: null,
-    }
-  },
-  created() {
-    mailService.query().then((mails) => {
-      console.log('mails', mails)
-      this.mails = mails
-    })
-  },
-  methods: {
-    selectMail(mail) {
-      // this.selectedBook = book
-      console.log('selectMail')
+    data() {
+        return {
+            filterBy: null,
+            selectedMail: null,
+            mails: null
+        }
     },
-    filter(filterBy) {
-      console.log('filterBy', filterBy)
-      this.filterBy = filterBy
+    created() {
+        mailService.query()
+            .then(mails => {
+                console.log('mails', mails);
+                this.mails = mails
+            })
     },
-    removeMail(bookId) {
-      console.log('removeMail')
+    methods: {
+        selectMail(mail) {
+            // this.selectedBook = book
+            console.log('selectMail');
+        },
+        filter(filterBy) {
+            console.log('filterBy', filterBy);
+            this.filterBy = filterBy
+        },
+        removeMail(bookId) {
+            console.log('removeMail');
+        },
+        addEmail(email){
+            this.mails.push(email)
+        }
     },
-    addEmail(email) {
-      this.mails.push(email)
-    },
-  },
-  computed: {
-    mailsToShow() {
-      if (!this.filterBy) return this.mails
-      console.log('mailsToShow')
-      const regex = new RegExp(this.filterBy.subject, 'i')
-      var filteredMails = this.mails.filter((mail) => {
-        return regex.test(mail.subject)
-      })
-      if (this.filterBy.isUnRead) {
-        filteredMails = filteredMails.filter((mail) => !mail.isRead)
-        return filteredMails
-      }
-      return filteredMails
+    computed: {
+        mailsToShow() {
+            if (!this.filterBy) return this.mails
+            console.log('mailsToShow');
+            const regex = new RegExp(this.filterBy.subject, 'i')
+            var filteredMails = this.mails.filter(mail => {
+                return regex.test(mail.subject)
+            })
+            if (this.filterBy.isUnRead){
+                filteredMails = filteredMails.filter(mail => !mail.isRead)
+                return filteredMails
+            } 
+            return filteredMails
+        }
+
     },
   },
   components: {
