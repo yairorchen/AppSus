@@ -15,7 +15,7 @@ export default {
             <div class="flex justify-center">
             <router-link  to='/keep/add'><div class="new-note-link">Wright a note...</div></router-link>
             </div>
-             <router-view @save="save" @done="done"></router-view>
+             <router-view @save="save"></router-view>
             <note-list
             v-if="notes" 
             @save="save"
@@ -26,7 +26,6 @@ export default {
   created() {
     noteService.query().then((notes) => {
       this.notes = notes
-      console.log(this.notes)
     })
   },
   data() {
@@ -75,7 +74,6 @@ export default {
   },
   computed: {
     notesToShow() {
-      console.log(this.notes)
       const regex = new RegExp(this.filterBy.title, 'i')
       if (!this.filterBy.type) {
         return this.notes.filter((note) => regex.test(note.info.title))

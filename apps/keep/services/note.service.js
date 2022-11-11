@@ -111,7 +111,7 @@ function createNote(type = 'note-txt') {
         },
       ],
     },
-    style: {},
+    style: '',
   }
 }
 
@@ -123,7 +123,6 @@ function createTodo() {
   }
 }
 function query() {
-  console.log('query')
   return storageService.query(KEEP_KEY)
 }
 
@@ -142,7 +141,7 @@ function save(note) {
   } else {
     console.log('new')
     KeepData.push(note)
-    return storageService.post(KEEP_KEY, note)
+    return storageService.post(KEEP_KEY, note, false)
   }
 }
 

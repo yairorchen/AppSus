@@ -22,15 +22,15 @@ export default {
         </div>
         <hr>
         <div v-for="todo in note.info.todos">
-            <div class="todo" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p>{{todo.txt}}</div>
+            <div class="todo black-white" v-if="todo.doneAt"><p @click="isDone(todo)">❎</p>{{todo.txt}}</div>
         </div>
     </div>
     <div class="flex justify-center">
-        <button class="imp"><input v-model="color" class="color-input" type="color"
-            @input="changeColor" title="background color">🎨</input>
+        <button class="imp black-white"><input v-model="color" class="color-input" type="color"
+            @input="changeColor" title="background color">🎨
         </button>
-        <div>🖼️</div>
-        <div>🖊️</div>
+        <!-- <div>🖼️</div>
+        <div>🖊️</div> -->
     </div>
     <div></div>
 </div>
@@ -53,7 +53,6 @@ export default {
     },
     isDone(todo) {
       console.log('done')
-      //   this.$emit('done', todo)
       var todoId = todo.id
       const idx = this.note.info.todos.findIndex((todo) => todo.id === todoId)
       if (!this.note.info.todos[idx].doneAt) {
