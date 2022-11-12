@@ -37,7 +37,7 @@ export default {
             <div v-if="mails" @click="filterTresh" class="menu-btn unread-mails flex justify-between"
                 :class="{active: treshMailsActive }">
 				<div><img src="./assets/img/delete.png" width=16 alt=""/> </div>
-				<div> Tresh </div>
+				<div> Trash </div>
 				<div class="menu-btn-counter">{{showTreshMails}} </div>
 			</div>
 		</div>
