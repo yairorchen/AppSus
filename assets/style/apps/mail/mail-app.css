@@ -38,7 +38,7 @@
     background-color: var(--clr1);
     padding: 10px;
     border-radius: 10px;
-    max-height: 69vh;
+    max-height: 78vh;
     grid-area: center;
     grid-column: 2/-1;
     grid-row: 2/-1;
@@ -47,7 +47,7 @@
 .mail-app-footer{
     position: fixed;
     background-color: #f7f8fc;
-    height: 23px;
+    height: 16px;
     width: 100%;
     bottom: 0;
 }
