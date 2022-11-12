@@ -5,10 +5,10 @@ export default {
     props: ['mails'],
     template: `
     <aside class=" nav-menu">
-        <button class="btn-humburger" @click="toggleMenu()">☰</button>
-        <!-- <div class="flex logo">            
-        <img class="gb_zc" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png" srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_rtl_r5.png 2x " alt="" aria-hidden="true" role="presentation" style="width:109px;height:40px">
-        </div> -->
+        <div class="flex justify-evenly align-center">
+            <button class="btn-humburger" @click="toggleMenu()">☰</button>
+            <img src="./assets/img/mail-photo.png" width=30 height=25 alt="" />
+        </div>
         <div class="menu-items flex" v-if="isMenuOpen">
             <div>
                 <button  class="compose-btn"
@@ -28,15 +28,6 @@ export default {
                 <div> Unread </div>
                 <div>{{showUnreadMails}} </div>
         </div>
-        <!-- <div>
-            <img class="candy-box-menu" @click="toggleMenu()" src="../assets/img/candy-box-menu.png">
-            <nav v-if="menuOpen" class="menu-modal">
-                <router-link to="/" @click="toggleMenu()">Home</router-link> | 
-                <router-link to="/about" @click="toggleMenu()">About</router-link> |
-                <router-link to="/mail" @click="toggleMenu()">Mail</router-link> |
-                <router-link to="/keep" @click="toggleMenu()">Keep</router-link>
-            </nav>
-            </div> -->
         </div>
     </aside>
     `,

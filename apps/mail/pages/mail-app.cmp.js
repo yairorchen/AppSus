@@ -5,6 +5,7 @@ import mailFilter from "../cmps/mail-filter.cmp.js"
 import mailSorting from "../cmps/mail-sorting-cmp.js"
 import mailFooter from "../cmps/mail-footer.cmp.js"
 import mailHeader from "../cmps/mail-header.cmp.js"
+
 export default {
     name: 'mail-app',
     template: `
@@ -19,8 +20,9 @@ export default {
         @filter="filter"
         ></mail-filter>
         <mail-sorting
+        @sort="sort"
         class="mail-sorting">
-            </mail-sorting>          
+            </mail-sorting>         
                 <mail-list class="mail-list scroller"
                 v-if="mails"
                 :mails="mailsToShow"
@@ -38,7 +40,8 @@ export default {
                 isUnRead: false
             },
             selectedMail: null,
-            mails: null
+            mails: null,
+            sortBy: null
         }
     },
     created() {
@@ -52,6 +55,10 @@ export default {
         selectMail(mail) {
             // this.selectedBook = book
             console.log('selectMail');
+        },
+        sort(sortBy){
+            console.log('sortBy',sortBy);
+            this.sortBy = sortBy
         },
         filterUnread(){
             console.log('filterUnread - mail app');
@@ -74,7 +81,7 @@ export default {
     },
     computed: {
         mailsToShow() {
-            if (!this.filterBy) return this.mails
+            if (!this.filterBy && !this.sortBy) return this.mails
 
             var filteredMails = this.mails
 
@@ -84,12 +91,17 @@ export default {
                     return regex.test(mail.subject)
                 })
             }
-
-            console.log('filteredMails',filteredMails);
             if (this.filterBy.isUnRead){
                 filteredMails = filteredMails.filter(mail => !mail.isRead)
-                return filteredMails
             } 
+            if (this.sortBy){
+                if(this.sortBy === 'title'){
+                    filteredMails.sort((a, b) => a.subject.localeCompare(b.subject))
+                } else if(this.sortBy === 'date'){
+
+                    filteredMails.sort((a, b) => b.sentAt - a.sentAt )
+                }
+            }
 
             return filteredMails
         }

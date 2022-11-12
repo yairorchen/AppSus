@@ -26,7 +26,6 @@ export default {
         this.isClicked=false
     },
     mounted() {
-        console.log('mails', this.mails);
     },
     methods: {
         remove(mailId){
