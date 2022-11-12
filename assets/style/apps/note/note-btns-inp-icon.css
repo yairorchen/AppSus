@@ -1,0 +1,135 @@
+.pin {
+    height: 47px;
+    width: 47px;
+    padding: 10px;
+}
+
+.todo {
+    cursor: pointer;
+    margin-inline-start: 15px;
+}
+
+.imp {
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+}
+
+.dots {
+    margin-left: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    align-items: center;
+}
+
+.done {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.imp input {
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.color-input {
+    position: absolute;
+    z-index: 10;
+}
+
+.clean-input {
+    font-size: 1.2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-width: 85%;
+    max-width: 100%;
+    padding: 0;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    margin-bottom: 15px;
+}
+
+.new-note-link {
+    margin: 20px;
+    font-size: 1.2rem;
+    height: 46px;
+    width: 80vw;
+    border: 1px solid rgba(128, 128, 128, 0.391);
+    border-radius: 8px;
+    box-shadow: 0 0 7px 0px;
+    padding: 10px;
+
+}
+
+.type-filter {
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    width: 100%;
+}
+
+.type-filter:hover {
+
+    box-shadow: 0 0 7px 0px;
+}
+
+.search {
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 0 7px 0px;
+}
+
+.btn {
+    border: 0;
+    background-color: rgba(240, 248, 255, 0);
+    margin-inline-start: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+
+}
+
+.type-option:hover {
+    border-radius: 5px;
+    background-color: rgb(194, 196, 196);
+}
+
+.menu-search {
+    width: 100%;
+    border: 0;
+}
+
+.input-search-note {
+    display: none;
+    font-size: 1.2rem;
+    padding-inline-start: 50px;
+    border-radius: 8px;
+    border: 0;
+    background: #eef2fa;
+    position: absolute;
+    right: 40%;
+    transform: translate(50%, 180%);
+    z-index: 10;
+    max-width: 70vw;
+    height: 48px;
+
+}
+
+.note-search-icon {
+    display: none;
+}
+
+@media(min-width: 875px) {
+    .input-search-note {
+        display: block;
+        flex-grow: 1;
+        position: inherit;
+        right: 0;
+        transform: translate(0%, 0%);
+        z-index: 0;
+    }
+
+    .note-search-icon {
+        display: block
+    }
+}

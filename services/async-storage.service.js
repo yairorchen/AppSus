@@ -4,8 +4,17 @@ export const storageService = {
   post,
   put,
   remove,
+  ///////
+  getInObject,
+  ////
 }
-
+///////
+function getInObject(entityType, entityId, place) {
+  return query(entityType).then((entities) =>
+    entities[place].find((entity) => entity.id === entityId)
+  )
+}
+/////
 // get array from storage
 
 function query(entityType, delay = 500) {

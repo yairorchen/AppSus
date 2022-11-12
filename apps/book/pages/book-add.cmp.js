@@ -1,7 +1,8 @@
 import { bookService } from '../services/book-service.js'
-
+import mainHeader from '../../../cmps/app-header.cmp.js'
 export default {
   template: `
+    <main-header/>
         <section class="book-edit">
             <h2>book add</h2>
             <input class="input text"
@@ -41,4 +42,7 @@ export default {
     },
   },
   computed: {},
+  components: {
+    mainHeader,
+  },
 }

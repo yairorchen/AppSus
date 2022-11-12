@@ -1,12 +1,14 @@
 import { bookService } from '../services/book-service.js'
 
+import mainHeader from '../../../cmps/app-header.cmp.js'
+
 import bookFilter from '../cmps/book-filter.cmp.js'
 import bookList from '../cmps/book-list.cmp.js'
 
 export default {
   template: `
   <section>
-
+    <main-header/>
     <book-filter @filter="filter"/>
     
     <book-list
@@ -63,6 +65,7 @@ export default {
   },
 
   components: {
+    mainHeader,
     bookList,
     bookFilter,
   },
