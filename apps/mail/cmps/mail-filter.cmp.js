@@ -7,13 +7,6 @@ export default {
         @input="filter"
         v-model="filterBy.subject" 
         />
-        <label>Unread
-            <input type="checkbox"
-            title="Unread mails only"
-            v-model="filterBy.isUnRead"  name="emails read"
-            @change="filter"
-            />
-        </label>
     </section>
     `,
     data(){

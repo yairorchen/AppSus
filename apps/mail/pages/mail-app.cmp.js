@@ -3,7 +3,7 @@ import mailList from "../cmps/mail-list.cmp.js"
 import mailMenu from "../cmps/mail-menu.cmp.js"
 import mailFilter from "../cmps/mail-filter.cmp.js"
 import mailSorting from "../cmps/mail-sorting-cmp.js"
-
+import mailFooter from "../cmps/mail-footer.cmp.js"
 export default {
     name: 'mail-app',
     template: `
@@ -18,14 +18,14 @@ export default {
         <mail-sorting
         class="mail-sorting">
             </mail-sorting>          
-                <mail-list class="mail-list"
+                <mail-list class="mail-list scroller"
                 v-if="mails"
                 :mails="mailsToShow"
                 @removeMail="removeMail"
                 >
             </mail-list>
             <router-view></router-view>
-        
+        <mail-footer></mail-footer>
     </section>
     `,
     data() {
@@ -95,6 +95,7 @@ export default {
         mailList,
         mailMenu,
         mailFilter,
-        mailSorting
+        mailSorting,
+        mailFooter
     }
 }

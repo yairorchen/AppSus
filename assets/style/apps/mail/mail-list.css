@@ -3,8 +3,6 @@
 
 .mail-line{
     border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-    /* margin: 0.5rem; */
-    /* padding: 0 15; */
     height: 2.5rem;
     font-size: 1.2rem;
     line-height: 2.5rem;
@@ -67,4 +65,26 @@
     align-items: center;
     margin: auto;
     margin-top: 25%;
+}
+
+.scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #8fa9b4 white;
+    
+    overflow-y: scroll;
+}
+
+.scroller::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroller::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 13px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    background-color: #8fa9b4;
+    border-radius: 13px;
+    border: 1px solid white;
 }

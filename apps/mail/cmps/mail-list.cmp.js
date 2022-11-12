@@ -3,7 +3,7 @@ export default {
     name: 'mail-list',
     props: ['mails'],
     template: `
-    <section v-if="!isClicked">
+    <section v-if="!isClicked" class="">
         <ul class="clean-list">
             <li v-for="mail in mails" :key="mail.id">
                 <router-link 

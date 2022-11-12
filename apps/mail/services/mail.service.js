@@ -40,6 +40,106 @@ const mailData = [
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Moshe',
+        subject: 'Miss you! mister mahatma!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
     }, {
         id: utilService.makeId(),
         name: 'Yossi',
