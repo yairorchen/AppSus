@@ -4,9 +4,12 @@ import mailMenu from "../cmps/mail-menu.cmp.js"
 import mailFilter from "../cmps/mail-filter.cmp.js"
 import mailSorting from "../cmps/mail-sorting-cmp.js"
 import mailFooter from "../cmps/mail-footer.cmp.js"
+import mailHeader from "../cmps/mail-header.cmp.js"
 export default {
     name: 'mail-app',
     template: `
+        <!-- <mail-header>
+        </mail-header> -->
     <section class="mail-app">
         <mail-menu class="mail-menu"
         :mails="mails" 
@@ -96,6 +99,7 @@ export default {
         mailMenu,
         mailFilter,
         mailSorting,
-        mailFooter
+        mailFooter,
+        mailHeader
     }
 }
