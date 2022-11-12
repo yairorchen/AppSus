@@ -19,6 +19,14 @@ iframe {
 
 }
 
+.txt-container {
+    width: 100%
+}
+
+.title-fill {
+    width: 50px;
+}
+
 @media screen and (min-width: 340px) {
     .notes-container {
         width: 95vw;
