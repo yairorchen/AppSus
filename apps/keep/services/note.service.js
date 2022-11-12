@@ -26,7 +26,7 @@ const KeepData = [
     type: 'note-img',
     isPinned: false,
     info: {
-      url: '/assets/img/Malawach.jpg',
+      url: './assets/img/Malawach.jpg',
       txt: 'puki is the king',
       title: 'Bobi and Me',
     },
@@ -39,7 +39,7 @@ const KeepData = [
     type: 'note-img',
     isPinned: true,
     info: {
-      url: '/assets/img/yair-photo.jpeg',
+      url: './assets/img/yair-photo.jpeg',
       txt: 'puki is the king wallaaa',
       title: 'Bobi and Me yaa',
     },
@@ -144,7 +144,7 @@ function save(note) {
     return storageService.post(KEEP_KEY, note)
   }
 }
-
+function duplicate() {}
 function _createKeep() {
   const KEEP = utilService.loadFromStorage(KEEP_KEY)
   if (!KEEP || !KEEP.length) {

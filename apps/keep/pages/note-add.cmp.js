@@ -17,7 +17,7 @@ export default {
                 <div class="black-white pointer" @click="noteType('note-video')">🎬</div>
                 <div class="black-white pointer" @click="noteType('note-todos')">⬜</div>
             </div>
-             <router-link to="/keep" @click="saveNote()">Close</router-link>
+             <router-link to="/keep" @click="saveNote()" @click="close()">Close</router-link>
   </div>
   </div>
     `,
@@ -36,8 +36,10 @@ export default {
   methods: {
     saveNote() {
       this.$emit('save', this.note)
-
       console.log(this.note)
+    },
+    close() {
+      this.$emit('close', this.close)
     },
     noteType(type) {
       this.note.type = type

@@ -7,29 +7,22 @@ export default {
             <div class="line"></div>
             </div>
             <div class="flex logo">
-            <h1 >Keep</h1>
-            <img  src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x " alt="" aria-hidden="true" role="presentation" style="width:40px;height:40px">
+            
             <img class="gb_zc" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png" srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_rtl_r5.png 2x " alt="" aria-hidden="true" role="presentation" style="width:109px;height:40px">
             
             </div>
-          
+            
+            <input v-if="searchOpen" class="input-search" type="text" placeholder="Search"/>
             
             <div class="place-for-icon"></div>
-           
+            <img  @click="toggleSearch()" class="search-icon" src="../assets/img/search-icon.png">
             <div>
             <img class="candy-box-menu" @click="toggleMenu()" src="../assets/img/candy-box-menu.png">
             <nav v-if="menuOpen" class="menu-modal">
-                <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> | 
-                <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> |
-                <router-link to="/mail" @click="toggleMenu()">
-                    <img class="gb_zc" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png" srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_rtl_r5.png 2x " alt="" aria-hidden="true" role="presentation" style="width:109px;height:40px">
-                </router-link> |
-                <router-link to="/keep" @click="toggleMenu()">
-                    <div class="flex">
-                   <h1 >Keep</h1>
-                     <img  src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x " alt="" aria-hidden="true" role="presentation" style="width:40px;height:40px">
-                    </div>
-                    </router-link>
+                <router-link to="/" @click="toggleMenu()">Home</router-link> | 
+                <router-link to="/about" @click="toggleMenu()">About</router-link> |
+                <router-link to="/mail" @click="toggleMenu()">Mail</router-link> |
+                <router-link to="/keep" @click="toggleMenu()">Keep</router-link>
             </nav>
             </div>
             

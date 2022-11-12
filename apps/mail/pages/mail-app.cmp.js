@@ -18,7 +18,7 @@ export default {
         <mail-sorting
         class="mail-sorting">
             </mail-sorting>          
-                <mail-list class="mail-list scroller"
+                <mail-list class="mail-list"
                 v-if="mails"
                 :mails="mailsToShow"
                 @removeMail="removeMail"

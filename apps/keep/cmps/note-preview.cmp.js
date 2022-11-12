@@ -7,15 +7,16 @@ export default {
               <h3 class="title">{{note.info.title}}</h3>
               
                 <div>{{note.info.txt}}</div>
-                <hr>
+                
                 <div class="todos-preview" v-if="note.type ==='note-todos'">
+                  <br>
                   <div v-for="todo in note.info.todos">
                 
                     <p v-if="!todo.doneAt" >⬜{{todo.txt}}</p>
                   </div>
                   <hr>
                   <div v-for="todo in note.info.todos">
-                      <p class="black-white flex" v-if="todo.doneAt">❎<p class=" done">{{todo.txt}}</p></p>
+                      <p class="black-white flex" v-if="todo.doneAt">☑️<p class=" done">{{todo.txt}}</p></p>
                   </div>
                 </div>
                 <iframe  v-if="note.type ==='note-video'" width="220" height="140"
