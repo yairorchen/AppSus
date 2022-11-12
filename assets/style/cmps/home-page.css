@@ -1,0 +1,18 @@
+
+/* HOME Page */
+
+.home-page{
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.keep-homepage-btn{
+    width: min-content;
+}
+
+.homepage-main-btn{
+    width: 150px;
+}
