@@ -56,8 +56,7 @@ export default {
         filterUnread() {
             console.log('start filter');
             this.isUnread = !this.isUnread
-            console.log('this.isUnread', this.isUnread);
-            this.$emit('filterUnread', this.isUnread)
+            this.$emit('filterUnread')
         }
     },
     computed: {

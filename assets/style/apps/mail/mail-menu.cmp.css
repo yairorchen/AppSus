@@ -38,10 +38,12 @@
 .income-mails{
     margin: 8px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .unread-mails{
     margin: 8px;
+    cursor: pointer;
 }
 
 

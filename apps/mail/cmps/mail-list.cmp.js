@@ -1,5 +1,4 @@
 import mailPreview from "./mail-preview.cmp.js";
-import { mailService } from "../services/mail.service.js";
 export default {
     name: 'mail-list',
     props: ['mails'],
@@ -31,12 +30,7 @@ export default {
     },
     methods: {
         remove(mailId){
-            console.log('mailId',mailId);
-            mailService.remove(mailId)
-            .then(()=>{
-                const idx = this.mails.findIndex((mail) => mail.id === mailId)
-                this.mails.splice(idx,1)
-            })
+            this.$emit('removeMail', mailId)
         }
     },
     computed: {
