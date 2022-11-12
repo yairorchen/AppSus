@@ -1,0 +1,55 @@
+/* SMALL */
+
+@media (max-width: 520px) {
+    /* MEDIUM */
+    .mail-app{
+        margin: 5px;
+        background-color: #f7f8fc;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas: 
+        'left center right'
+        'left center right'
+        'left center right'
+        'left center right'
+        'left center right'
+        ;
+    }
+    .mail-menu{
+    grid-area: left;
+    grid-column: 1/3;
+    grid-row: 1/-1;
+}
+
+
+.mail-filter{
+    grid-area: center;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.mail-sorting{
+    grid-area: center;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.mail-header{
+    grid-area: right;
+    grid-column: -1;
+    grid-row: 1;
+}
+
+
+.mail-list{
+    background-color: var(--clr1);
+    padding: 10px;
+    border-radius: 10px;
+    height: 88vh;
+    grid-area: center;
+    margin-left: 40px;
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    }
+}
