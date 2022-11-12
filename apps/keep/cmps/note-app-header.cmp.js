@@ -26,7 +26,6 @@ export default {
             </div>
             <router-link to="/keep" >
             <div class="flex logo pointer">
-            <h1 >Keep</h1>
             <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x " alt="" aria-hidden="true" role="presentation" style="width:40px;height:40px">
             </div>
             </router-link>
@@ -41,23 +40,15 @@ export default {
             <div class="place-for-icon"></div>
             
             <img  @click="toggleSearch()" class="search-icon pointer note-search-icon" src="./assets/img/search-icon.png">
-            <!-- <div>
-            <select class="type-filter pointer" @change="filter" name="type" id="Type" v-model = "filterBy.type">
-              <option value="note-txt">Text</option>
-              <option value="note-video">Video</option>
-              <option value="note-img">Imag</option>
-              <option value="note-todos">Todo</option>
-              <option value="">all</option>
-            </select>
-        </div> -->
+           
             <div>
             <img class="candy-box-menu pointer" @click="toggleMenu()" src="./assets/img/candy-box-menu.png">
             <nav v-if="menuOpen" class="menu-modal">
-                <router-link to="/" @click="toggleMenu()"><h3>Home</h3></router-link> 
-                <router-link to="/about" @click="toggleMenu()"><h3>About</h3></router-link> 
-               <router-link to="/book" @click="toggleMenu()"><h3>Book</h3></router-link> 
-                <router-link to="/mail" @click="toggleMenu()"><h3>Mail</h3></router-link> 
-                <router-link to="/keep" @click="toggleMenu()"><h3>Keep</h3></router-link>
+                <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> 
+                <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> 
+               <router-link to="/book" @click="toggleMenu()"><h1>Book</h1></router-link> 
+                <router-link to="/mail" @click="toggleMenu()"><h1>Mail</h1></router-link> 
+                <router-link to="/keep" @click="toggleMenu()"><h1>Keep</h1></router-link>
             </nav>
             </div>
             
