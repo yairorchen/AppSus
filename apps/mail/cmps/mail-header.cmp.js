@@ -3,12 +3,12 @@ export default {
         <header class="mail-header-section flex">
             <img class="mail-candy-box-menu" @click="toggleMenu()" src="../assets/img/candy-box-menu.png">
             <nav v-if="menuOpen" class="menu-modal">
-                <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> | 
-                <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> |
-                <router-link to="/book" @click="toggleMenu()"><h1>Book</h1></router-link> |
+                <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> 
+                <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> 
+                <router-link to="/book" @click="toggleMenu()"><h1>Book</h1></router-link> 
                 <router-link to="/mail" @click="toggleMenu()">
                     <img class="gb_zc" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png" srcset="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_rtl_r5.png 1x, https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_rtl_r5.png 2x " alt="" aria-hidden="true" role="presentation" style="width:109px;height:40px">
-                </router-link> |
+                </router-link> 
                 <router-link to="/keep" @click="toggleMenu()">
                     <div class="flex">
                    <h1 >Keep</h1>
