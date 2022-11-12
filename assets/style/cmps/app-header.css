@@ -58,6 +58,16 @@
   box-shadow: 0 0 5px 0px;
   padding: 15px;
   z-index: 30;
+
+}
+
+.menu-modal>* {
+  text-decoration: none;
+  margin-inline-start: 15px;
+}
+
+.menu-modal>:nth-child(3n) {
+  margin-inline-start: 0px;
 }
 
 .search-icon,

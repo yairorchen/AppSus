@@ -17,7 +17,7 @@ export default {
             <div class="flex justify-center">
             <router-link  to='/keep/add'><div v-if="isShow" @click="toggleShown()" class="new-note-link">Wright a note...</div></router-link>
             </div>
-             <router-view @save="save" ></router-view>
+             <router-view @save="save" @close="close"></router-view>
             <note-list
             v-if="notes" 
             @save="save"
@@ -79,7 +79,6 @@ export default {
           this.notes.unshift(note)
         })
       }
-      this.close()
     },
 
     toggleShown() {

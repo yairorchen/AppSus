@@ -17,7 +17,7 @@ export default {
 
   <div v-for="note in notes" :key="note.id" >
       <div  class="note-preview" v-if="!note.isPinned"  :style="note.style">
-              <div class="black-white pointer" @click="togglePin(note.id)">📌</div>
+              <div class="black-white pointer pin" @click="togglePin(note.id)">📌</div>
                 <router-link :to="'/keep/' + note.id">
                 <note-preview :note="note" /> 
                 </router-link>

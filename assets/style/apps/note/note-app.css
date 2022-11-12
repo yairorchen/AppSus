@@ -63,6 +63,12 @@ iframe {
     cursor: pointer;
 }
 
+.pin {
+    height: 47px;
+    width: 47px;
+    padding: 10px;
+}
+
 .todo {
     cursor: pointer;
     margin-inline-start: 15px;
@@ -196,8 +202,13 @@ iframe {
     height: 40px;
     border-radius: 8px;
     border: 0;
+}
+
+.type-filter:hover {
+
     box-shadow: 0 0 7px 0px;
 }
+
 
 .search {
     border-radius: 8px;
