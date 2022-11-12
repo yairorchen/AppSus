@@ -53,9 +53,9 @@
   margin-inline-start: 15px;
 }
 
-.menu-modal>:nth-child(3n) {
+/* .menu-modal>:nth-child(3n) {
   margin-inline-start: 0px;
-}
+} */
 
 .search-icon,
 .candy-box-menu {
@@ -65,12 +65,7 @@
   opacity: 0.65;
 }
 
-/* .search-icon {
-  position: absolute;
 
-  transform: translate(680%, -30%);
-  transition: 0.4s;
-} */
 
 .search-icon {
   position: relative;
@@ -79,7 +74,6 @@
 
 .logo {
   margin-top: 15px;
-  /* width: 232px; */
   flex-grow: 2;
 }
 

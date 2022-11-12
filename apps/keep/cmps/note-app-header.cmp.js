@@ -1,10 +1,28 @@
 export default {
   template: `
         <header class="app-header pointer">
-            <div class="menu-icon">
+            <div @click="openBurger()" class="menu-icon">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
+            </div>    
+            <div v-if="burgerOpen" class="note-menu">
+              <div>
+                  <input v-if="searchOpen"
+                  class="menu-search"
+                    @input="filter"
+                    v-model = "filterBy.title"
+                    type="text"
+                     placeholder="Search "/>
+                  <h3 class="type-option" @click="filterType('note-txt')" >Text</h3>
+                  <h3 class="type-option" @click="filterType('note-video')" >Video</h3>
+                  <h3 class="type-option" @click="filterType('note-img')">Imag</h3>
+                  <h3 class="type-option" @click="filterType('note-todos')">Todo</h3>
+                  <h3 class="type-option" @click="filterType('')">all</h3>
+                
+               </div>
+              </div>
+
             </div>
             <router-link to="/keep" >
             <div class="flex logo pointer">
@@ -14,7 +32,7 @@ export default {
             </router-link>
 
             <input v-if="searchOpen"
-             class="input-search"
+             class="input-search-note"
               @input="filter"
             v-model = "filterBy.title"
             type="text"
@@ -22,8 +40,8 @@ export default {
             
             <div class="place-for-icon"></div>
             
-            <img  @click="toggleSearch()" class="search-icon pointer" src="../assets/img/search-icon.png">
-            <div>
+            <img  @click="toggleSearch()" class="search-icon pointer note-search-icon" src="../assets/img/search-icon.png">
+            <!-- <div>
             <select class="type-filter pointer" @change="filter" name="type" id="Type" v-model = "filterBy.type">
               <option value="note-txt">Text</option>
               <option value="note-video">Video</option>
@@ -31,14 +49,14 @@ export default {
               <option value="note-todos">Todo</option>
               <option value="">all</option>
             </select>
-        </div>
+        </div> -->
             <div>
             <img class="candy-box-menu pointer" @click="toggleMenu()" src="../assets/img/candy-box-menu.png">
             <nav v-if="menuOpen" class="menu-modal">
-                <router-link to="/" @click="toggleMenu()">Home</router-link> | 
-                <router-link to="/about" @click="toggleMenu()">About</router-link> |
-                <router-link to="/mail" @click="toggleMenu()">Mail</router-link> |
-                <router-link to="/keep" @click="toggleMenu()">Keep</router-link>
+                <router-link to="/" @click="toggleMenu()"><h3>Home</h3></router-link> | 
+                <router-link to="/about" @click="toggleMenu()"><h3>About</h3></router-link> |
+                <router-link to="/mail" @click="toggleMenu()"><h3>Mail</h3></router-link> |
+                <router-link to="/keep" @click="toggleMenu()"><h3>Keep</h3></router-link>
             </nav>
             </div>
             
@@ -53,6 +71,7 @@ export default {
     return {
       menuOpen: false,
       searchOpen: true,
+      burgerOpen: false,
       filterBy: {
         title: '',
         type: '',
@@ -66,8 +85,15 @@ export default {
     toggleSearch() {
       this.searchOpen = !this.searchOpen
     },
+    filterType(type) {
+      this.filterBy.type = type
+      this.filter()
+    },
     filter() {
       this.$emit('filter', { ...this.filterBy })
+    },
+    openBurger() {
+      this.burgerOpen = !this.burgerOpen
     },
   },
   computed: {},
