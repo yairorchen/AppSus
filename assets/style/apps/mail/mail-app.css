@@ -22,11 +22,19 @@
     grid-row: 1/-1;
 }
 
+.mail-header{
+    grid-area: right;
+    grid-column: -1;
+    grid-row: 1;
+}
+
 .mail-filter{
     grid-area: center;
     grid-column: 3/9;
     grid-row: 1;
 }
+
+
 
 .mail-sorting{
     grid-area: right;

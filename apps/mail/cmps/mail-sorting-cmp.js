@@ -2,8 +2,8 @@ export default {
     name:'mail-sorting',
     template:`
     <section class="sorting-section">
-        <label  title="sort by:" class="flex flex-column">
-            <img @click="toggleShowSort" src="./assets/img/sorting-order.png" width=20 alt="" />
+        <label title="sort by:" class="flex flex-column">
+            <img class="sorting-img" @click="toggleShowSort" src="./assets/img/sorting-order.png" width=20 alt="" />
             <select class="sort-opt-btn"
             v-if="isSortClick"
             name="sort by"

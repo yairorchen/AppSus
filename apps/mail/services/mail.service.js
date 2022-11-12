@@ -1,18 +1,20 @@
 import { storageService } from '../../../services/async-storage.service.js'
 import { utilService } from '../../../services/util.service.js'
 
+const loggedinUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+}
+
 export const mailService = {
     query,
     get,
     remove,
     save,
-    getEmptyMail
+    getEmptyMail,
+    loggedinUser
 }
 
-const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
-}
 
 
 const MAILS_KEY = 'mailsDB'
@@ -24,6 +26,46 @@ const mailData = [
     {
         id: utilService.makeId(),
         name: 'Puki',
+        subject: 'Come to the Pukiada!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
+        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Muky',
+        subject: 'Come to the Pukiada!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
+        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Tzuki',
+        subject: 'Come to the Pukiada!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
+        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Shuki',
+        subject: 'Come to the Pukiada!',
+        body: 'want want want to catch up sometimes',
+        isRead: false,
+        sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
+        from: 'puki@puki.com',
+        to: 'user@appsus.com'
+    },
+    {
+        id: utilService.makeId(),
+        name: 'Tuki',
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,

@@ -15,6 +15,7 @@ export default {
         <mail-menu class="mail-menu"
         :mails="mails" 
         @filterUnread="filterUnread"
+        @filterSentMails="filterSentMails"
         @addEmail="addEmail"></mail-menu>
         <mail-filter class="mail-filter"
         @filter="filter"
@@ -29,6 +30,7 @@ export default {
                 @removeMail="removeMail"
                 >
             </mail-list>
+            <mail-header></mail-header>
             <router-view></router-view>
         <mail-footer></mail-footer>
     </section>
@@ -37,7 +39,8 @@ export default {
         return {
             filterBy: {
                 subject: null,
-                isUnRead: false
+                isUnRead: false,
+                isSent: false
             },
             selectedMail: null,
             mails: null,
@@ -63,6 +66,10 @@ export default {
         filterUnread(){
             console.log('filterUnread - mail app');
             this.filterBy.isUnRead = !this.filterBy.isUnRead
+        },
+        filterSentMails(){
+            console.log('filterSent - mail app')
+            this.filterBy.isSent = !this.filterBy.isSent
         },
         filter(filterBy) {
             this.filterBy = filterBy
@@ -91,9 +98,15 @@ export default {
                     return regex.test(mail.subject)
                 })
             }
+
             if (this.filterBy.isUnRead){
                 filteredMails = filteredMails.filter(mail => !mail.isRead)
             } 
+
+            if (this.filterBy.isSent){
+                filteredMails = this.mails.filter(mail => mail.from === mailService.loggedinUser.email)
+            }
+
             if (this.sortBy){
                 if(this.sortBy === 'title'){
                     filteredMails.sort((a, b) => a.subject.localeCompare(b.subject))
