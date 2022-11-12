@@ -18,11 +18,17 @@ export default {
         <button class="btn" @click="newTodo()">+</button>
         <div v-for="todo in note.info.todos">
                 
-            <div class="todo flex" v-if="!todo.doneAt"><p @click="isDone(todo)">⬜</p> <input class="clean-input" type="text" v-model="todo.txt"></div>
+            <div class="todo flex" v-if="!todo.doneAt"><p @click="isDone(todo)">⬜</p>
+             <input class="clean-input" type="text" v-model="todo.txt">
+             <p class="black-white" @click="removeTodo(todo.id)">❌</p>
+            </div>
         </div>
         <hr>
         <div v-for="todo in note.info.todos">
-            <div class="todo black-white flex" v-if="todo.doneAt"><p @click="isDone(todo)">☑️</p><p class=" done">{{todo.txt}}</p></div>
+            <div class="todo black-white flex" v-if="todo.doneAt"><p @click="isDone(todo)">☑️</p>
+            <input class="clean-input" type="text" v-model="todo.txt">
+            <p class="black-white" @click="removeTodo(todo.id)">❌</p>
+          </div>
         </div>
     </div>
     <div class="flex justify-center">
@@ -65,6 +71,11 @@ export default {
     newTodo() {
       const newTodo = noteService.createTodo()
       this.note.info.todos.unshift(newTodo)
+    },
+    removeTodo(todoId) {
+      console.log('removing todo')
+      const idx = this.note.info.todos.findIndex((todo) => todo.id === todoId)
+      this.note.info.todos.splice(idx, 1)
     },
     changeColor(color) {
       this.note.style = { backgroundColor: this.color }

@@ -8,6 +8,13 @@ import noteAdd from './apps/keep/pages/note-add.cmp.js'
 import mail from './apps/mail/pages/mail-app.cmp.js'
 import mailDetails from './apps/mail/pages/mail-details.cmp.js'
 import newMail from './apps/mail/cmps/new-mail.cmp.js'
+
+/////BOOKS/////
+import bookApp from './apps/book/pages/book-app.cmp.js'
+import bookDetails from './apps/book/pages/book-details.cmp.js'
+import bookEditCmp from './apps/book/pages/book-edit.cmp.js'
+import bookAdd from './apps/book/pages/book-add.cmp.js'
+
 const { createRouter, createWebHashHistory } = VueRouter
 
 const routerOptions = {
@@ -51,6 +58,26 @@ const routerOptions = {
       component: mailDetails,
       name: 'details',
       props: true,
+    },
+
+    ////////////BOOKS///////////
+    {
+      path: '/book',
+      component: bookApp,
+      children: [
+        {
+          path: '/book/:id',
+          component: bookDetails,
+        },
+      ],
+    },
+    {
+      path: '/book/edit/:id?',
+      component: bookEditCmp,
+    },
+    {
+      path: '/book/add',
+      component: bookAdd,
     },
   ],
 }

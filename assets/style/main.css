@@ -27,3 +27,13 @@
 
 /* notes app */
 @import 'apps/note/note-app.css';
+
+
+
+/* book app */
+@import 'apps/book/base.css';
+@import 'apps/book/cmps/book-list.css';
+@import 'apps/book/cmps/book-details.css';
+@import 'apps/book/cmps/book-preview.css';
+@import 'apps/book/cmps/book-add-review.css';
+@import 'apps/book/cmps/book-filter.css';

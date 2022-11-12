@@ -15,7 +15,7 @@ export default {
         <section class="note-app">
             <note-filter @filter="filter"/>
             <div class="flex justify-center">
-            <router-link  to='/keep/add'><div v-if="isShow" @click="toggleShown()" class="new-note-link">Wright a note...</div></router-link>
+            <router-link  to='/keep/add'><div v-if="isShow" @click="toggleShown()" class="new-note-link">Write a note...</div></router-link>
             </div>
              <router-view @save="save" @close="close"></router-view>
             <note-list
