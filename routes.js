@@ -75,10 +75,10 @@ const routerOptions = {
       path: '/book/edit/:id?',
       component: bookEditCmp,
     },
-    {
-      path: '/book/add',
-      component: bookAdd,
-    },
+    // {
+    //   path: '/book/add',
+    //   component: bookAdd,
+    // },
   ],
 }
 

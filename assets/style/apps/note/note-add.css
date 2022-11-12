@@ -1,0 +1,36 @@
+.note-add {
+    background-color: rgba(255, 255, 255, 1);
+    width: 80vw;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 10;
+    box-shadow: 0 0 12px 0px;
+
+}
+
+@media screen and (min-width: 340px) {
+    .note-add {
+        width: 320px
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .note-add {
+        width: 460px
+    }
+}
+
+
+@media screen and (min-width: 540px) {
+    .note-add {
+        width: 500px
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    .note-add {
+        width: 600px
+    }
+}

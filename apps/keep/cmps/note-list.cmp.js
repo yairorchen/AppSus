@@ -19,7 +19,7 @@ export default {
       <div  class="note-preview" v-if="!note.isPinned"  :style="note.style">
               <div class="black-white pointer pin" @click="togglePin(note.id)">📌</div>
                 <router-link :to="'/keep/' + note.id">
-                <note-preview :note="note" /> 
+                <note-preview :note="note" @save="save" /> 
                 </router-link>
                <div class="hover-show flex justify-between">
                 <div class="dots flex"  @click="toggleOptionOpen()">︙</div>
@@ -71,6 +71,7 @@ export default {
       this.save(this.notes[idx])
     },
     save(note) {
+      console.log('save in list')
       this.$emit('save', note)
     },
     togglePin(noteId) {

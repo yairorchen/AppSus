@@ -1,0 +1,36 @@
+.note-preview {
+    background-color: rgba(255, 228, 196, 0);
+    width: 85vw;
+    border-radius: 8px;
+    border: rgba(164, 159, 159, 0.523) 1px solid;
+    padding: 10px;
+    margin-top: 15px;
+    break-inside: avoid-column;
+    transition: 0.3s;
+
+
+}
+
+.note-preview:hover {
+    box-shadow: -1px 0px 5px 0px;
+}
+
+@media screen and (min-width: 340px) {
+    .note-preview {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .note-preview {
+        width: 238px;
+    }
+
+}
+
+
+@media screen and (min-width: 540px) {
+    .note-preview {
+        width: 238px;
+    }
+}

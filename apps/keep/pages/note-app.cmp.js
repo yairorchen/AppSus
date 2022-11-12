@@ -3,7 +3,6 @@ import { noteService } from '../services/note.service.js'
 import noteHeader from '../cmps/note-app-header.cmp.js'
 
 import noteList from '../cmps/note-list.cmp.js'
-import noteFilter from '../cmps/note-filter.cmp.js'
 
 import noteAdd from '../pages/note-add.cmp.js'
 import noteDetails from '../pages/note-details.cmp.js'
@@ -12,12 +11,13 @@ export default {
   name: 'note-app',
   template: `
   <note-header  @filter="filter"/>
-        <section class="note-app">
-            <note-filter @filter="filter"/>
-            <div class="flex justify-center">
+        <section  class="note-app">
+       
+             <!-- <div class="flex justify-center">
             <router-link  to='/keep/add'><div v-if="isShow" @click="toggleShown()" class="new-note-link">Write a note...</div></router-link>
-            </div>
-             <router-view @save="save" @close="close"></router-view>
+            </div> -->
+             <router-view @save="save" @close="close"></router-view> 
+            <note-add  @save="save" @close="close"/>
             <note-list
             v-if="notes" 
             @save="save"
@@ -44,12 +44,6 @@ export default {
       noteService.remove(noteId).then(() => {
         const idx = this.notes.findIndex((note) => note.id === noteId)
         this.notes.splice(idx, 1)
-
-        //   const msg = {
-        //     txt: `Car ${noteId} deleted...`,
-        //     type: 'success',
-        //   }
-        //   eventBus.emit('user-msg', msg)
       })
     },
 
@@ -107,7 +101,6 @@ export default {
   components: {
     noteHeader,
     noteList,
-    noteFilter,
 
     noteAdd,
     noteDetails,
