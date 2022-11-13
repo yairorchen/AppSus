@@ -5,7 +5,7 @@ export default {
   template: `
   
   <div :style="note.style" class="note-details flex flex-column align-center justify-center" v-if="note">
-    <router-link to="/keep" @click="saveNote()">Back</router-link>
+    <router-link class="exit-btn" to="/keep" @click="saveNote()">X</router-link>
     
     <input class="clean-input" type="text" v-model="note.info.title">
 

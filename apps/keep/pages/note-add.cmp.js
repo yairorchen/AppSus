@@ -8,10 +8,10 @@ export default {
     <div class="txt-container">
      <input class="clean-input title-fill" type="text" @click="toggleShown()" v-model="note.info.title"  placeholder="Write Title">
      <div class="flex justify-center">
-                <div class="black-white pointer" @click="noteType('note-img')">🖼️</div>
-                <div class="black-white pointer" @click="noteType('note-txt')">🖊️</div>
-                <div class="black-white pointer" @click="noteType('note-video')">🎬</div>
-                <div class="black-white pointer" @click="noteType('note-todos')">⬜</div>
+                <div class="black-white pointer add-icon" @click="noteType('note-img')">🖼️</div>
+                <div class="black-white pointer add-icon" @click="noteType('note-txt')">🖊️</div>
+                <div class="black-white pointer add-icon" @click="noteType('note-video')">🎬</div>
+                <div class="black-white pointer add-icon" @click="noteType('note-todos')">⬜</div>
             </div>
             
      <div v-if="isShown">
