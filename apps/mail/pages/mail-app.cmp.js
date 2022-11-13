@@ -14,8 +14,11 @@ export default {
     <section class="mail-app">
         <mail-menu class="mail-menu"
         :mails="mails" 
+        :trash="trash"
         @filterUnread="filterUnread"
+        @filterStared="filterStared"
         @filterSentMails="filterSentMails"
+        @filterTresh="filterTresh"
         @addEmail="addEmail"></mail-menu>
         <mail-filter class="mail-filter"
         @filter="filter"
@@ -30,7 +33,8 @@ export default {
                 @removeMail="removeMail"
                 >
             </mail-list>
-            <mail-header></mail-header>
+            <mail-header class="mail-header"
+            ></mail-header>
             <router-view></router-view>
         <mail-footer></mail-footer>
     </section>
@@ -40,10 +44,13 @@ export default {
             filterBy: {
                 subject: null,
                 isUnRead: false,
-                isSent: false
+                stared: false,
+                isSent: false,
+                trash: false
             },
             selectedMail: null,
             mails: null,
+            trash: [],
             sortBy: null
         }
     },
@@ -67,6 +74,14 @@ export default {
             console.log('filterUnread - mail app');
             this.filterBy.isUnRead = !this.filterBy.isUnRead
         },
+        filterStared(){
+            console.log('filterStared - mail app');
+            this.filterBy.stared = !this.filterBy.stared
+        },
+        filterTresh(){
+            console.log('filter trash- mail app');
+            this.filterBy.trash = !this.filterBy.trash
+        },
         filterSentMails(){
             console.log('filterSent - mail app')
             this.filterBy.isSent = !this.filterBy.isSent
@@ -79,7 +94,7 @@ export default {
             mailService.remove(mailId)
             .then(()=>{
                 const idx = this.mails.findIndex((mail) => mail.id === mailId)
-                this.mails.splice(idx,1)
+                this.trash = this.mails.splice(idx,1)
             })
         },
         addEmail(email){
@@ -90,6 +105,12 @@ export default {
         mailsToShow() {
             if (!this.filterBy && !this.sortBy) return this.mails
 
+            if (this.filterBy.trash){
+                return this.trash
+            }
+            if(this.filterBy.stared){
+                return this.mails.filter(mail => mail.isStared)
+            }
             var filteredMails = this.mails
 
             if (this.filterBy.subject){

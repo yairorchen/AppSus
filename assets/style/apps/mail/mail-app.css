@@ -23,8 +23,10 @@
 }
 
 .mail-header{
+    /* position: fixed;
+    right: 20px; */
     grid-area: right;
-    grid-column: -1;
+    grid-column: 10;
     grid-row: 1;
 }
 

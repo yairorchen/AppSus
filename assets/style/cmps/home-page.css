@@ -1,12 +1,25 @@
 
 /* HOME Page */
 
+.home-container{
+    height: 90vh;
+    width: 100%;
+    background-image: url(/../assets/img/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .home-page{
     width: 60%;
     height: 50%;
     margin: auto;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 80px;
+    border: 2px double var(--clr3);
+    border-radius: 20px;
+    padding: 50px;
 }
 
 .keep-homepage-btn{
@@ -15,4 +28,14 @@
 
 .homepage-main-btn{
     width: 150px;
+}
+
+.title-homepage{
+    text-align: center;
+    padding-top: 50px;
+    text-decoration: underline;
+}
+.choose-app{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 1px solid var(--clr3);
 }

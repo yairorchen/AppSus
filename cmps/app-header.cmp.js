@@ -1,7 +1,7 @@
 export default {
   template: `
         <header class="app-header">
-          <h1>AppSus</h1>
+          <h1 class="logo-apsus">AppSus</h1>
           <img class="appsus-logo" src="./assets/img/appsus-logo.jpg">
             <div class="place-for-icon"></div>
            

@@ -10,7 +10,7 @@
 }
 
 .mail-read{
-    background-color: #bababa5b;
+    background-color: #f2f6fc;
 }
 
 .mail-line:hover{
@@ -24,11 +24,15 @@
 
 .name{
     min-width: 20%;
-    margin-right: 10px;
+    margin-right: 1px;
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
 }
 
 .subject{
     width: 70%;
+    margin-left: 25px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -69,22 +73,22 @@
 
 .scroller {
     scrollbar-width: thin;
-    scrollbar-color: #8fa9b4 white;
+    scrollbar-color: #a1adb2 white;
     
     overflow-y: scroll;
 }
 
 .scroller::-webkit-scrollbar {
-    width: 12px;
+    width: 13px;
 }
 
 .scroller::-webkit-scrollbar-track {
     background: white;
-    border-radius: 13px;
+    border-radius: 5px;
 }
 
 .scroller::-webkit-scrollbar-thumb {
-    background-color: #8fa9b4;
-    border-radius: 13px;
+    background-color: #a1adb2;
+    border-radius: 5px;
     border: 1px solid white;
 }

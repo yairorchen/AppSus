@@ -18,6 +18,10 @@
     margin-left: 15px;
 }
 
+.menu-img{
+    width: 25px;
+}
+
 .nav-menu{
     margin-top: 10px;
     font-size: 1rem;
@@ -42,11 +46,12 @@
 
 .menu-btn{
     width: max-content;
+    padding: 5px;
 }
 
 .menu-btn:hover{
     background: #daeefc;
-    border-radius: 12px;
+    border-radius: 0 10px 10px 0;
     transition: .4s;
 }
 
@@ -70,6 +75,8 @@
 
 .active{
     border-radius: 0 10px 10px 0;
-    padding: 3px;
     background-color: rgb(179, 217, 252);
+    padding-right: 15px;
+    font-weight: 600;
+    transition: .5s;
 }

@@ -12,14 +12,13 @@ export const mailService = {
     remove,
     save,
     getEmptyMail,
-    loggedinUser
+    loggedinUser,
 }
 
 
 
 const MAILS_KEY = 'mailsDB'
 
-let mailTrash = []
 
 
 const mailData = [
@@ -29,6 +28,7 @@ const mailData = [
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -39,6 +39,7 @@ const mailData = [
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -49,6 +50,7 @@ const mailData = [
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -59,6 +61,7 @@ const mailData = [
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -69,6 +72,7 @@ const mailData = [
         subject: 'Come to the Pukiada!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -79,6 +83,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -89,6 +94,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -99,6 +105,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -109,6 +116,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -119,6 +127,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -129,6 +138,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -139,6 +149,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -149,6 +160,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -159,6 +171,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -169,6 +182,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -179,6 +193,7 @@ const mailData = [
         subject: 'Miss you! mister mahatma!',
         body: 'Would love to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -188,6 +203,7 @@ const mailData = [
         subject: 'Love you!',
         body: 'love love love to catch up sometimes and! mister lova lova! its a fantastic tactic to write over 100 chars for tests what do you think?!?',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**10),        
         from: 'bobo@bobo.com',
         to: 'user@appsus.com'
@@ -197,6 +213,7 @@ const mailData = [
         subject: 'want you!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -206,6 +223,7 @@ const mailData = [
         subject: 'want you!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -215,6 +233,7 @@ const mailData = [
         subject: 'want you!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -224,6 +243,7 @@ const mailData = [
         subject: 'want you!',
         body: 'want want want to catch up sometimes',
         isRead: false,
+        isStared: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'

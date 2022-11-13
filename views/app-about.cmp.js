@@ -6,7 +6,7 @@ export default {
   <section class="about-page">
 		<h1 class="title-about-us">About us</h1>
 		<section class="developer-section flex align-center">
-            <div class="imgs-container flex flex-column">
+            <div class="imgs-container flex flex-column align-center">
 			<img src="./assets/img/yair-photo.jpeg" width=140 class="my-photo" alt="">
 			<div class=" flex flex-column justify-center align-items-center">
 				<div class="flex icons-container justify-evenly align-items-center">

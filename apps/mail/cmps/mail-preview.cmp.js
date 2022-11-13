@@ -4,6 +4,13 @@ export default {
     template: `
     <article @mouseover="isHoverToggle" @mouseleave="isNotHoverToggle" class="mail-line flex justify-between" :class="{'mail-read': mail.isRead}" >
         <div class="start-line flex ">
+            <button v-if="!mail.isStared" title="Mark as star" @click.stop.prevent="toggleStared()"
+             class="is-stared-btn mail-line-btn">
+                <img src="./assets/img/star-empty.png" width=15 height=15 />
+            </button>
+            <button v-if="mail.isStared" title="Mark as not star" @click.stop.prevent="toggleStared()" class="is-stared-btn mail-line-btn">
+                <img src="./assets/img/star.png" width=15 height=15  />
+            </button>
             <div class="name"> {{ mail.name }} </div>
             <div class="subject"> {{ mail.subject }}</div>
         </div>    
@@ -28,7 +35,8 @@ export default {
     data() {
         return {
             isHover: false,
-            isRead: false
+            isRead: false,
+            isStared: false
         }
     },
     created() {
@@ -44,6 +52,10 @@ export default {
         toggleRead() {
             this.isRead = !this.isRead
             this.mail.isRead = this.isRead
+        },
+        toggleStared(){
+            this.isStared = !this.isStared
+            this.mail.isStared = this.isStared
         },
         remove() {
             console.log('remove')

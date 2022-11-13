@@ -19,7 +19,16 @@
   margin: 3px 0;
 }
 
-
+.logo-apsus{
+  margin-inline-start: 10px;
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family: 'Merriweather', serif;
+  font-size: 2.2em;
+  font-style: italic;
+  -webkit-text-stroke: 1px rgb(155, 155, 155);
+  text-shadow: 5px 5px 2px rgb(136, 136, 136);
+  letter-spacing: .03em;
+}
 
 .place-for-icon {
   width: 150px;
