@@ -2,7 +2,7 @@ export default {
   template: `
         <header class="mail-header-section flex align-center justify-end">
         <div>
-            <img class="candy-box-menu" @click="toggleMenu()" src="./assets/img/candy-box-menu.png">
+            <img src="./candy-box-menu.png" class="candy-box-menu" @click="toggleMenu()" >
             <nav v-if="menuOpen" class="menu-modal">
                 <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> 
                 <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> 
