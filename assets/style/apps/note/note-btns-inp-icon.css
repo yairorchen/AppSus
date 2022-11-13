@@ -119,6 +119,16 @@
     display: none;
 }
 
+.exit-btn {
+    align-self: flex-start;
+    height: 47px;
+    width: 47px;
+}
+
+.add-icon {
+    margin: 0 8px 8px 8px;
+}
+
 @media(min-width: 875px) {
     .input-search-note {
         display: block;

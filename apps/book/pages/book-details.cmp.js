@@ -16,7 +16,7 @@ export default {
         <h4>description </h4>
         {{book.description}}
       </p>
-      <img class="sale" v-if="book.listPrice.isOnSale" src="../../img/sale.png" alt="">
+      <img class="sale" v-if="book.listPrice.isOnSale" src="../../../assets/img/sale.png" alt="">
       <h4 v-bind:class="priceClass">
         {{book.listPrice.amount}} {{book.listPrice.currencyCode}}
       </h4>

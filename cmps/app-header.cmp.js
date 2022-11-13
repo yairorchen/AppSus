@@ -6,7 +6,7 @@ export default {
             <div class="place-for-icon"></div>
            
             <div>
-            <img class="candy-box-menu" @click="toggleMenu()" src="./../assets/img/candy-box-menu.png">
+            <img class="candy-box-menu" @click="toggleMenu()" src="./assets/img/candy-box-menu.png">
             <nav v-if="menuOpen" class="menu-modal">
                 <router-link to="/" @click="toggleMenu()"><h1>Home</h1></router-link> 
                 <router-link to="/about" @click="toggleMenu()"><h1>About</h1></router-link> 
