@@ -4,13 +4,15 @@
 .mail-line{
     border-bottom: 1px solid rgba(0, 0, 0, 0.158);
     height: 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
     line-height: 2.5rem;
     transition: .3s;
 }
 
 .mail-read{
     background-color: #f2f6fc;
+    font-weight: 400;
 }
 
 .mail-line:hover{
@@ -25,9 +27,6 @@
 .name{
     min-width: 20%;
     margin-right: 1px;
-    /* text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap; */
 }
 
 .subject{
