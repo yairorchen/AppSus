@@ -29,6 +29,10 @@
     margin-right: 1px;
 }
 
+.mail-clicked{
+    font-weight: 400;
+}
+
 .subject{
     width: 70%;
     margin-left: 25px;

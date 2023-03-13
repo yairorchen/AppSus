@@ -5,7 +5,10 @@ export default {
     template: `
     <section v-if="!isClicked" class="">
         <ul class="clean-list">
-            <li v-for="mail in mails" :key="mail.id">
+            <li v-for="mail in mails" 
+            :key="mail.id"
+            :class="{'mail-clicked': mail.isClicked }"
+            >
                 <router-link 
                   :to="{name:'details',params:{id:mail.id},query:{name:mail.name}}">
                     <mail-preview

@@ -29,6 +29,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -40,6 +41,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -51,6 +53,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -62,6 +65,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -73,6 +77,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**8),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -84,6 +89,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -95,6 +101,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -106,6 +113,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -117,6 +125,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -128,6 +137,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -139,6 +149,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -150,6 +161,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -161,6 +173,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -172,6 +185,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -183,6 +197,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -194,6 +209,7 @@ const mailData = [
         body: 'Would love to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(15**5, 10**10),
         from: 'momo@momo.com',
         to: 'user@appsus.com'
@@ -204,6 +220,7 @@ const mailData = [
         body: 'love love love to catch up sometimes and! mister lova lova! its a fantastic tactic to write over 100 chars for tests what do you think?!?',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**10),        
         from: 'bobo@bobo.com',
         to: 'user@appsus.com'
@@ -214,6 +231,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -224,6 +242,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -234,6 +253,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'
@@ -244,6 +264,7 @@ const mailData = [
         body: 'want want want to catch up sometimes',
         isRead: false,
         isStared: false,
+        isClicked: false,
         sentAt: Date.now() - utilService.getRandomIntInclusive(10**5, 10**9),        
         from: 'puki@puki.com',
         to: 'user@appsus.com'

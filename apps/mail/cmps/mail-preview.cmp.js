@@ -2,7 +2,9 @@ export default {
     name: 'mail-preview',
     props: ['mail'],
     template: `
-    <article @mouseover="isHoverToggle" @mouseleave="isNotHoverToggle" class="mail-line flex justify-between" :class="{'mail-read': mail.isRead}" >
+    <article @mouseover="isHoverToggle" @mouseleave="isNotHoverToggle" class="mail-line flex justify-between"
+    @click="clicked" 
+    :class="{'mail-read': mail.isRead}" >
         <div class="start-line flex ">
             <button v-if="!mail.isStared" title="Mark as star" @click.stop.prevent="toggleStared()"
              class="is-stared-btn mail-line-btn">
@@ -36,7 +38,7 @@ export default {
         return {
             isHover: false,
             isRead: false,
-            isStared: false
+            isStared: false,
         }
     },
     created() {
@@ -52,6 +54,11 @@ export default {
         toggleRead() {
             this.isRead = !this.isRead
             this.mail.isRead = this.isRead
+        },
+        clicked(){
+            console.log('mail - clicked');
+            console.log('mail');
+            this.mail.isClicked = true
         },
         toggleStared(){
             this.isStared = !this.isStared
